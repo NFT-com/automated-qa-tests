@@ -1,0 +1,82 @@
+package com.nft.home_page;
+
+
+import com.nft.qa.base.Locators;
+import com.nft.qa.base.TestBase;
+import graphql.Assert;
+
+public class homepage extends TestBase{
+	Locators locators = new Locators();
+
+	
+
+	public void NavigateToNFT () {
+
+		System.out.println("<<<<=====NFT.COM loaded successfully.====>>>>");
+		String currenturl = driver.getCurrentUrl();
+		System.out.println(currenturl);
+	}
+	
+	public void ValidateNFTLogoImage() {
+		Assert.assertTrue(locators.NFTCom_LogoImage.isDisplayed());
+		Assert.assertTrue(locators.NFTCom_LogowithName.isDisplayed());
+	}
+	
+	public void ValidateNFTcomHeaderOptions(){
+		String DiscoverheaderOption = locators.NFTCom_Discover_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_Discover_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + DiscoverheaderOption);
+		
+		
+		String NFTCom_Gallery_Headeroption = locators.NFTCom_Gallery_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_Gallery_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + NFTCom_Gallery_Headeroption);
+		
+		String NFTCom_Learn_Headeroption = locators.NFTCom_Learn_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_Learn_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + NFTCom_Learn_Headeroption);
+		
+		String NFTCom_Search_Headeroption = locators.NFTCom_Search_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_Search_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + NFTCom_Search_Headeroption);
+		
+		String NFTCom_SignIn_Headeroption = locators.NFTCom_SignIn_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_SignIn_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + NFTCom_SignIn_Headeroption);
+		
+		String NFTCom_Cart_Headeroption = locators.NFTCom_Cart_Headeroption.getText();
+		Assert.assertTrue(locators.NFTCom_Cart_Headeroption.isDisplayed());
+		System.out.println("Displayed header Option is====>> " + NFTCom_Cart_Headeroption);
+	}
+	
+	public void VerifyDiscoverHeaderDropDownoptions() {
+		locators.NFTCom_Discover_Headeroption.click();
+		
+		String NFTCom_Discover_NFTs_DropwDownValue = locators.NFTCom_Discover_NFTs_DropwDownValue.getText();
+		Assert.assertTrue(locators.NFTCom_Discover_NFTs_DropwDownValue.isDisplayed());
+		System.out.println("Discover header dropwdown Option is====>> " + NFTCom_Discover_NFTs_DropwDownValue);
+		
+		String NFTCom_Discover_Collections_DropwDownValue = locators.NFTCom_Discover_Collections_DropwDownValue.getText();
+		Assert.assertTrue(locators.NFTCom_Discover_Collections_DropwDownValue.isDisplayed());
+		System.out.println("Discover header dropwdown Option is====>> " + NFTCom_Discover_Collections_DropwDownValue);
+		
+		String NFTCom_Discover_Profiles_DropwDownValue = locators.NFTCom_Discover_Profiles_DropwDownValue.getText();
+		Assert.assertTrue(locators.NFTCom_Discover_Profiles_DropwDownValue.isDisplayed());
+		System.out.println("Discover header dropwdown Option is====>> " + NFTCom_Discover_Profiles_DropwDownValue);
+		
+	}
+	
+	public void VerifyLearnHeaderDropDownoptions() throws InterruptedException {
+		Thread.sleep(2000);
+		locators.NFTCom_Learn_Headeroption.click();
+		
+		String NFTCom_Learn_Docs_DropwDownValue = locators.NFTCom_Learn_Docs_DropwDownValue.getText();
+		Assert.assertTrue(locators.NFTCom_Learn_Docs_DropwDownValue.isDisplayed());
+		System.out.println("Learn header dropwdown Option is====>> " + NFTCom_Learn_Docs_DropwDownValue);
+		
+		String NFTCom_Learn_Blog_DropwDownValue = locators.NFTCom_Learn_Blog_DropwDownValue.getText();
+		Assert.assertTrue(locators.NFTCom_Learn_Blog_DropwDownValue.isDisplayed());
+		System.out.println("Learn header dropwdown Option is====>> " + NFTCom_Learn_Blog_DropwDownValue);
+		
+	}
+}

@@ -1,0 +1,14 @@
+package com.nft.broken_links;
+
+
+import com.nft.qa.base.TestBase;
+
+public class BrokenLinks extends TestBase{
+
+
+
+	public void ValidateTheBrokenLinksOnTheNFTSite () {
+
+	
+	}
+}

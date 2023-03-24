@@ -1,0 +1,23 @@
+package com.b1.qa.pages;
+import com.nft.qa.base.TestBase;
+public class AccountsDefaultFieldValuesPage extends TestBase{
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+}

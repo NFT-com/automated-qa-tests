@@ -1,0 +1,32 @@
+1679297558248	Move compilation unit
+1679297575606	Copy file
+1679297587139	Delete element
+1679297595344	Delete element
+1679297653974	Delete element
+1679297724970	Move file
+1679297799107	Delete element
+1679297896032	Delete element
+1679319721246	Rename package 'com.b1.qa.base'
+1679319734596	Rename package 'com.b1.qa.config'
+1679319745189	Rename package 'com.b1.qa.excel.utility'
+1679319755017	Rename package 'com.b1.qa.pages'
+1679319765636	Rename package 'com.b1.qa.resourceFiles'
+1679319775180	Rename package 'com.b1.qa.testdata'
+1679319786254	Rename package 'com.b1.qa.util'
+1679319850277	Delete element
+1679320212661	Delete element
+1679323636399	Delete element
+1679323638915	Delete element
+1679323641693	Delete element
+1679323650018	Delete element
+1679323651758	Delete element
+1679323658359	Delete element
+1679326521221	Delete element
+1679326545891	Rename type 'AppTest'
+1679328891003	Copy package
+1679328895308	Delete element
+1679328897040	Delete element
+1679328915943	Rename package 'com.nft'
+1679328934013	Copy package
+1679328947504	Rename type 'HomePage_Test'
+1679663944355	Rename package 'com.nft.broken_links_Test.copy'

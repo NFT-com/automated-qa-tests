@@ -1,0 +1,324 @@
+package com.b1.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.nft.qa.base.TestBase;
+
+public class IgniteTabsVarification extends TestBase {
+
+	@FindBy(xpath = "//a[contains(text(),'Reports')]")
+	WebElement Reports;
+
+	@FindBy(xpath = "//a[contains(text(),'Leads')]")
+	WebElement Leads;
+
+	@FindBy(xpath = "//a[contains(text(),'Accounts')]")
+	WebElement Accounts;
+
+	@FindBy(xpath = "//a[contains(text(),'Help')]")
+	WebElement Help;
+
+	@FindBy(xpath = "//a[contains(text(),'Monitor')]")
+	WebElement Monitor;
+
+	@FindBy(xpath = "//a[contains(text(),'Etailer')]")
+	WebElement Etailer;
+
+	@FindBy(xpath = "//a[contains(text(),'Admin Tools')]")
+	WebElement AdminTools;
+
+	public IgniteTabsVarification() {
+
+		PageFactory.initElements(driver, this);
+	}
+
+	public void VerifyLocationTab() {
+
+		String LocationManager = driver.findElement(By.xpath("//a[contains(text(),'Locations Manager')]")).getText();
+		System.out.println(LocationManager);
+		Assert.assertTrue(LocationManager.contains("Locations Manager"));
+
+		String NewDealerApprovalQueue = driver
+				.findElement(By.xpath("//a[contains(text(),'New Dealer Approval Queue')]")).getText();
+		System.out.println(NewDealerApprovalQueue);
+		Assert.assertTrue(NewDealerApprovalQueue.contains("New Dealer Approval Queue"));
+
+		String SocialLocationManager = driver.findElement(By.xpath("//a[contains(text(),'Social Location Manager')]"))
+				.getText();
+		System.out.println(SocialLocationManager);
+		Assert.assertTrue(SocialLocationManager.contains("Social Location Manager"));
+
+	}
+
+	public void VerifyFilesTab() {
+
+		WebElement Upload = driver.findElement(By.xpath("//a[contains(text(),'Upload')]"));
+		//System.out.println(Upload);
+		Upload.isDisplayed();
+
+		WebElement Schedule = driver.findElement(By.xpath("//a[contains(text(),'Schedule')]"));
+		//System.out.println(Schedule);
+		Schedule.isDisplayed();
+
+		WebElement Download = driver.findElement(By.xpath("//li[@id='Download']//a[@id='NotActiveTab']"));
+		//System.out.println(Download);
+		Download.isDisplayed();
+
+		WebElement AdminDownload = driver.findElement(By.xpath("//a[contains(text(),'Admin Download')]"));
+		//System.out.println(AdminDownload);
+		AdminDownload.isDisplayed();
+
+		WebElement History = driver.findElement(By.xpath("//li[@id='History']//a[@id='NotActiveTab']"));
+		//System.out.println(History);
+		History.isDisplayed();
+
+		WebElement FieldEditor = driver.findElement(By.xpath("//a[contains(text(),'Field Editor')]"));
+		//System.out.println(FieldEditor);
+		FieldEditor.isDisplayed();
+
+		WebElement DataCleansing = driver.findElement(By.xpath("//li[@id='DataCleansing']//a[@id='NotActiveTab']"));
+		//System.out.println(DataCleansing);
+		DataCleansing.isDisplayed();
+
+		WebElement DataCleansingHistory = driver
+				.findElement(By.xpath("//a[contains(text(),'Data Cleansing History')]"));
+		//System.out.println(DataCleansingHistory);
+		DataCleansingHistory.isDisplayed();
+
+		WebElement Configuration = driver.findElement(By.xpath("//a[contains(text(),'Configuration')]"));
+		//System.out.println(Configuration);
+		Configuration.isDisplayed();
+
+		WebElement FieldGroupEditor = driver.findElement(By.xpath("//a[contains(text(),'Field Group Editor')]"));
+		//System.out.println(FieldGroupEditor);
+		FieldGroupEditor.isDisplayed();
+
+		WebElement Revert = driver.findElement(By.xpath("//a[contains(text(),'Revert')]"));
+		//System.out.println(Revert);
+		Revert.isDisplayed();
+
+	}
+
+	public void VerifySitesTab() {
+
+		WebElement Templetes = driver.findElement(By.xpath("//a[contains(text(),'Templates')]"));
+		Templetes.isDisplayed();
+
+		WebElement Configuration = driver.findElement(By.xpath("//li[@id='Configuration']//a[@id='NotActiveTab']"));
+		Configuration.isDisplayed();
+
+		WebElement ConfigAdmin = driver.findElement(By.xpath("//a[contains(text(),'Configuration Admin')]"));
+		ConfigAdmin.isDisplayed();
+
+		WebElement Coupons = driver.findElement(By.xpath("//a[contains(text(),'Coupons')]"));
+		Coupons.isDisplayed();
+
+		WebElement Events = driver.findElement(By.xpath("//a[contains(text(),'Events')]"));
+		Events.isDisplayed();
+
+		WebElement LocationBuilder = driver.findElement(By.xpath("//a[contains(text(),'Locator Builder')]"));
+		LocationBuilder.isDisplayed();
+
+		WebElement Snapchat = driver.findElement(By.xpath("//a[contains(text(),'Snapchat')]"));
+		Snapchat.isDisplayed();
+	}
+
+	public void VerifyClaimingTab() {
+
+		WebElement ColumnMap = driver.findElement(By.xpath("//a[contains(text(),'Column Map')]"));
+		ColumnMap.isDisplayed();
+
+		WebElement OnDemand = driver.findElement(By.xpath("//a[contains(text(),'On Demand')]"));
+		OnDemand.isDisplayed();
+
+		WebElement Schedule = driver.findElement(By.xpath("//a[contains(text(),'Scheduled')]"));
+		Schedule.isDisplayed();
+
+		WebElement History = driver.findElement(By.xpath("//li[@id='History']//a[@id='NotActiveTab']"));
+		History.isDisplayed();
+
+		WebElement Config = driver.findElement(By.xpath("//a[contains(text(),'Configuration')]"));
+		Config.isDisplayed();
+
+		WebElement ImportData = driver.findElement(By.xpath("//a[contains(text(),'Import Data')]"));
+		ImportData.isDisplayed();
+
+		WebElement ImportHistory = driver.findElement(By.xpath("//a[contains(text(),'Import History')]"));
+		ImportHistory.isDisplayed();
+
+		WebElement DataOverride = driver.findElement(By.xpath("//a[contains(text(),'Data Override')]"));
+		DataOverride.isDisplayed();
+	}
+
+	public void ClickOnReportsTab() {
+
+		Reports.click();
+	}
+
+	public void VerifyReportsTab() throws InterruptedException {
+
+		Thread.sleep(2000);
+		boolean Notice = driver.findElement(By.xpath("//span[@id='lightwindow_title_bar_title']")).isDisplayed();
+		System.out.println(Notice);
+
+		boolean Close = driver.findElement(By.xpath("//a[@id='lightwindow_title_bar_close_link']")).isDisplayed();
+		System.out.println(Close);
+
+		Thread.sleep(2000);
+		WebElement close = driver.findElement(By.xpath("//a[@id='lightwindow_title_bar_close_link']"));
+		close.click();
+
+		WebElement Reports = driver.findElement(By.xpath("//a[@id='ActiveTab']"));
+		Reports.isDisplayed();
+
+		WebElement LocalInteligenceAnalysis = driver
+				.findElement(By.xpath("//a[contains(text(),'Local Intelligence Analysis')]"));
+		LocalInteligenceAnalysis.isDisplayed();
+
+		WebElement FlexMonster = driver.findElement(By.xpath("//a[contains(text(),'Flexmonster')]"));
+		FlexMonster.isDisplayed();
+
+		WebElement InstantUpdateReport = driver.findElement(By.xpath("//a[contains(text(),'Instant Update Report')]"));
+		InstantUpdateReport.isDisplayed();
+
+	}
+
+	public void ClickOnLeads() {
+		Leads.click();
+	}
+
+	public void VerifyLeadsTab() {
+
+		WebElement Manager = driver.findElement(By.xpath("//a[contains(text(),'Manager')]"));
+		Manager.isDisplayed();
+
+		WebElement Subscribers = driver.findElement(By.xpath("//li[@id='Subscribers']//a[@id='NotActiveTab']"));
+		Subscribers.isDisplayed();
+
+		WebElement Messages = driver.findElement(By.xpath("//a[contains(text(),'Messages')]"));
+		Messages.isDisplayed();
+
+		WebElement Campaigns = driver.findElement(By.xpath("//a[contains(text(),'Campaigns')]"));
+		Campaigns.isDisplayed();
+
+		WebElement BatchSMS = driver.findElement(By.xpath("//a[contains(text(),'Batch SMS')]"));
+		BatchSMS.isDisplayed();
+	}
+
+	public void ClickOnAccounts() {
+
+		Accounts.click();
+
+	}
+
+	public void VerifyAccountsTab() {
+
+		WebElement UserSettings = driver.findElement(By.xpath("//a[contains(text(),'User Settings')]"));
+		UserSettings.isDisplayed();
+
+		WebElement ClientInformation = driver.findElement(By.xpath("//a[contains(text(),'Client Information')]"));
+		ClientInformation.isDisplayed();
+
+		WebElement CreateAccount = driver.findElement(By.xpath("//a[contains(text(),'Create Account')]"));
+		CreateAccount.isDisplayed();
+
+		WebElement LocatorInformation = driver.findElement(By.xpath("//a[contains(text(),'Locator Information')]"));
+		LocatorInformation.isDisplayed();
+
+	}
+
+	public void ClickOnMonitors() {
+
+		Monitor.click();
+
+	}
+
+	public void VerifyMonitorsTab() {
+
+		WebElement ReviewMonitor = driver.findElement(By.xpath("//a[contains(text(),'Review Monitor')]"));
+		ReviewMonitor.isDisplayed();
+
+		WebElement LocalSocialManager = driver.findElement(By.xpath("//a[contains(text(),'Local Social Manager')]"));
+		LocalSocialManager.isDisplayed();
+
+		WebElement JobScheduler = driver.findElement(By.xpath("//a[contains(text(),'Job Scheduler')]"));
+		JobScheduler.isDisplayed();
+
+		WebElement Configuration = driver.findElement(By.xpath("//a[contains(text(),'Configuration')]"));
+		Configuration.isDisplayed();
+
+	}
+
+	public void ClickOnEtailer() {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement etail = driver.findElement(By.xpath("//a[text()='Etailer']"));
+		js.executeScript("arguments[0].click();", etail);
+		// Etailer.click();
+
+	}
+
+	public void VerifyEtailersTab() {
+
+		WebElement Configuration = driver.findElement(By.xpath("//a[contains(text(),'Configuration')]"));
+		Configuration.isDisplayed();
+
+		WebElement ProviderRank = driver.findElement(By.xpath("//a[contains(text(),'Provider Rank')]"));
+		ProviderRank.isDisplayed();
+
+		WebElement StoreRank = driver.findElement(By.xpath("//a[contains(text(),'Store Rank')]"));
+		StoreRank.isDisplayed();
+
+		WebElement BrowseProduct = driver.findElement(By.xpath("//a[contains(text(),'Browse Products')]"));
+		BrowseProduct.isDisplayed();
+
+		WebElement providers = driver.findElement(By.xpath("//a[contains(text(),'Providers')]"));
+		providers.isDisplayed();
+
+		WebElement OnlineStore = driver.findElement(By.xpath("//a[contains(text(),'Online Store')]"));
+		OnlineStore.isDisplayed();
+
+		WebElement DirectFeeds = driver.findElement(By.xpath("//a[contains(text(),'Direct Feeds')]"));
+		DirectFeeds.isDisplayed();
+
+	}
+
+	public void ClickOnAdminTools() {
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement admintool = driver.findElement(By.xpath("//a[text()='Admin Tools']"));
+		js.executeScript("arguments[0].click();", admintool);
+		// AdminTools.click();
+
+	}
+
+	public void VerifyAdminToolsTab() {
+
+		WebElement ProspectManager = driver.findElement(By.xpath("//a[contains(text(),'Prospect Manager')]"));
+		ProspectManager.isDisplayed();
+
+		WebElement CompititiveAnalysisBuilder = driver
+				.findElement(By.xpath("//a[contains(text(),'Competitive Analysis Builder')]"));
+		CompititiveAnalysisBuilder.isDisplayed();
+
+		WebElement ContractBuilder = driver.findElement(By.xpath("//a[contains(text(),'Contract Builder')]"));
+		ContractBuilder.isDisplayed();
+
+		WebElement AccountManagement = driver.findElement(By.xpath("//a[contains(text(),'Account Management')]"));
+		AccountManagement.isDisplayed();
+
+		WebElement CustomInvoiceBuilder = driver
+				.findElement(By.xpath("//a[contains(text(),'Custom Invoice Builder')]"));
+		CustomInvoiceBuilder.isDisplayed();
+
+		WebElement FacebookLogin = driver.findElement(By.xpath("//a[contains(text(),'Facebook Login')]"));
+		FacebookLogin.isDisplayed();
+
+	}
+
+}

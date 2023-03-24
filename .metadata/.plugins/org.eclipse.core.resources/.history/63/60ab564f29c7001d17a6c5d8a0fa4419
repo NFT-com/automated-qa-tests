@@ -1,0 +1,42 @@
+package com.nft;
+
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Test;
+import org.testng.annotations.BeforeClass;
+import org.openqa.selenium.JavascriptExecutor;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.nft.qa.base.TestBase;
+import com.nft.qa.pages.Demo;
+import com.nft.qa.pages.FlagReviewFeedPage;
+import com.nft.qa.pages.HomePage;
+import com.nft.qa.pages.LoginPage;
+import com.nft.qa.pages.ReviewFeedPage;
+import com.nft.qa.pages.ReviewsPage;
+import com.nft.qa.util.TestUtility;
+
+import com.nft.qa.base.TestBase;
+import com.nft.qa.pages.HomePage;
+import com.nft.home_page.homepage;
+
+public class AppTest  extends TestBase
+{
+	homepage HomePage;
+	
+	public AppTest() {
+		super();
+	}
+
+	@BeforeClass(alwaysRun = true)
+	public void setUp() {
+		initialization();
+		HomePage = new homepage();
+	}
+
+	@Test(groups = { "sanity", "regression" }, priority = 1)
+	public void selectBrandify() throws Exception {
+		homepage homepage = new homepage();
+		homepage.selectBrandify();
+	}
+}

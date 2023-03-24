@@ -1,0 +1,225 @@
+package com.b1.qa.pages;
+
+
+import java.io.IOException;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.b1.qa.util.TestUtility;
+import com.nft.qa.base.TestBase;
+
+public class LocationMapNmedia extends TestBase {
+	
+	@FindBy(xpath = "/descendant::div[contains(text(),'Map')][1]")
+	WebElement Map;
+	
+	@FindBy(xpath = "//a[contains(text(),'Geocode')]")
+	WebElement Geocode;
+	
+	@FindBy(xpath = "/descendant::div[contains(text(),'Media')][1]")
+	WebElement Media;
+	
+	@FindBy(xpath = "//span[@id='desk']")
+	WebElement Addmedia;
+	
+	@FindBy(xpath = "//span[contains(text(),'Save')]")
+	WebElement Save;
+	
+	@FindBy(xpath = "/descendant::i[contains(text(),'add')][20]")
+	WebElement Add;
+	
+	
+	public LocationMapNmedia() {
+
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void clickOnLocationOVerview() throws Exception {
+
+		Thread.sleep(2000);
+		WebElement location = driver.findElement(By.xpath("//div[contains(text(),'LOCATIONS')]"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(location);
+		actions.click().build().perform();
+		Thread.sleep(2000);
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement overview = driver.findElement(By.xpath("//div[contains(text(),'Overview')]"));
+		js.executeScript("arguments[0].click();", overview);
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'ADD LOCATION')]")).click();
+
+	}
+	
+	public void ClickOnLocaionMap() {
+		
+		//Map.click();
+		TestUtility.clickOn(driver, Map, 30);
+	}
+	
+	public void VerifyLocationMap() {
+		
+		String geocode = driver.findElement(By.xpath("//a[contains(text(),'Geocode')]")).getText();
+		Assert.assertEquals(geocode, "GEOCODE");
+		
+		WebElement Geocode = driver.findElement(By.xpath("//a[contains(text(),'Geocode')]"));
+		Assert.assertTrue(Geocode.isEnabled());
+		
+		TestUtility.clickOn(driver, Geocode, 30);
+		
+	
+	}
+	
+	public void ClickOnLocationMedia() {
+		
+		TestUtility.clickOn(driver, Media, 30);
+		
+	}
+	
+	public void VerifyLocationMedia() throws InterruptedException {
+		
+		String photo = driver.findElement(By.xpath("//div[contains(text(),'Photos')]")).getText();
+		Assert.assertEquals(photo, "Photos");
+		
+		String video = driver.findElement(By.xpath("//div[contains(text(),'Videos')]")).getText();
+		Assert.assertEquals(video, "Videos");
+		
+		WebElement edit = driver.findElement(By.xpath("//div[contains(text(),'Photos')]"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(edit);
+		actions.click().build().perform();
+		Thread.sleep(2000);
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement edit1 = driver.findElement(By.xpath("/descendant::i[contains(text(),'edit')][2]"));
+		js.executeScript("arguments[0].click();", edit1);
+
+	}
+
+	public void UploadImage() throws InterruptedException, IOException {
+		String addimage = driver.findElement(By.xpath("//span[@id='desk']")).getText();
+		Assert.assertEquals(addimage, "+ ADD NEW IMAGE");
+		
+		TestUtility.clickOn(driver, Addmedia, 30);
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Browse your Images')]")).click();
+		
+		Runtime.getRuntime().exec("D:\\Ravi Singh\\AutoitScript.exe");
+		
+		 Thread.sleep(3000);
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Next')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/descendant::input[contains(@name,'name')][6]")).clear();
+		driver.findElement(By.xpath("/descendant::input[contains(@name,'name')][6]")).sendKeys("Test");
+		
+		driver.findElement(By.xpath("//div[contains(text(),'Image Label')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[@id='react-select-2--option-0']")).click();
+		
+		
+		TestUtility.clickOn(driver, Save, 30);
+	}
+
+
+	public void VerifyUploadedImage() throws InterruptedException {
+		
+		String image = driver.findElement(By.xpath("//p[contains(text(),'Approved')]")).getText();
+		Assert.assertEquals(image, "Approved");
+		
+		driver.findElement(By.xpath("//span[contains(text(),'< Back to Location Details')]")).click();
+		Thread.sleep(3000);
+		
+		TestUtility.clickOn(driver, Map, 30);
+		
+		TestUtility.clickOn(driver, Media, 30);
+		
+		
+		driver.findElement(By.xpath("//input[contains(@placeholder,'Url')]")).sendKeys("www.Google.com");
+		driver.findElement(By.xpath("//input[contains(@placeholder,'Name')]")).sendKeys("Google");
+		driver.findElement(By.xpath("//input[contains(@placeholder,'Description')]")).sendKeys("Search Engine");
+		
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", Add);
+		//TestUtility.clickOn(driver, Add, 30);
+
+	}
+	
+	
+	public void EditMedia() throws InterruptedException {
+		
+		TestUtility.clickOn(driver, Map, 30);
+		
+		TestUtility.clickOn(driver, Media, 30);
+		Thread.sleep(2000);
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement cancel = driver.findElement(By.xpath("/descendant::i[contains(text(),'cancel')][11]"));
+		js.executeScript("arguments[0].click();", cancel);
+	
+		
+		WebElement edit = driver.findElement(By.xpath("//div[contains(text(),'Photos')]"));
+		Actions actions = new Actions(driver);
+		actions.moveToElement(edit);
+		actions.click().build().perform();
+		Thread.sleep(2000);
+		JavascriptExecutor js1 = (JavascriptExecutor) driver;
+		WebElement edit1 = driver.findElement(By.xpath("/descendant::i[contains(text(),'edit')][2]"));
+		js1.executeScript("arguments[0].click();", edit1);
+		
+		
+		
+		WebElement edit2 = driver.findElement(By.xpath("//div[contains(text(),'Logo')]"));
+		Actions actions1 = new Actions(driver);
+		actions1.moveToElement(edit2);
+		actions1.build().perform();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/descendant::i[contains(text(),'more_vert')][2]")).click();
+		
+		
+	}
+	
+	public void VerifyInputData() throws InterruptedException {
+		String ImageName = driver.findElement(By.xpath("/descendant::div[contains(text(),'Test')][2]")).getText();
+		Assert.assertEquals(ImageName, "Test");
+		
+		String imageLabel = driver.findElement(By.xpath("/descendant::div[contains(text(),'Logo')][2]")).getText();
+		Assert.assertEquals(imageLabel, "Logo");
+		
+		String UploadedBy = driver.findElement(By.xpath("//div[contains(text(),'Ignite')]")).getText();
+		Assert.assertEquals(UploadedBy, "Ignite");
+		
+		String Status = driver.findElement(By.xpath("//div[contains(text(),'Approved')]")).getText();
+		Assert.assertEquals(Status, "Approved");
+		
+		String edit = driver.findElement(By.xpath("//span[contains(text(),'Edit')]")).getText();
+		Assert.assertEquals(edit, "EDIT");
+		
+		String delete = driver.findElement(By.xpath("//span[contains(text(),'Delete')]")).getText();
+		Assert.assertEquals(delete, "DELETE");
+		
+		String close = driver.findElement(By.xpath("//span[contains(text(),'Close')]")).getText();
+		Assert.assertEquals(close, "CLOSE");
+		
+		driver.findElement(By.xpath("//span[contains(text(),'Delete')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Delete Image')]")).click();
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//span[contains(text(),'< Back to Location Details')]")).click();
+		
+
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		WebElement cancel = driver.findElement(By.xpath("/descendant::i[contains(text(),'cancel')][10]"));
+		js.executeScript("arguments[0].click();", cancel);
+		
+		
+	}
+	
+	
+}

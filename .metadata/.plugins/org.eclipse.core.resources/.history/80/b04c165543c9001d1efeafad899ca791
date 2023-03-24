@@ -1,0 +1,40 @@
+package com.nft.qa.base;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+public class Locators extends TestBase{
+	/*
+	 * public Locators() { super(); }
+	 */
+	
+
+	
+	@FindBy(xpath = "//img[@src='https://cdn.nft.com/client/public/Logo.svg']")
+	public  WebElement NFTCom_LogoImage;
+
+	@FindBy(xpath = "//div[@class='flex items-center']")
+	public WebElement NFTCom_LogowithName;
+
+	@FindBy(xpath = "//a[contains(text(),'Discover')]")
+	public WebElement NFTCom_Discover_Headeroption;
+
+	@FindBy(xpath = "(//a[contains(text(),'Gallery')])[1]")
+	public WebElement NFTCom_Gallery_Headeroption;
+	
+	@FindBy(xpath = "//a[contains(text(),'Learn')]")
+	public WebElement NFTCom_Learn_Headeroption;
+	
+	@FindBy(xpath = "//input[@type='search']")
+	public WebElement NFTCom_Search_Headeroption;
+	
+	@FindBy(xpath = "//button[contains(text(),'Sign In')]")
+	public WebElement NFTCom_SignIn_Headeroption;
+	
+	@FindBy(xpath = "(//button/img[@alt='public/cart.svg'])[2]")
+	public WebElement NFTCom_Cart_Headeroption;
+
+	
+
+}

@@ -1,0 +1,232 @@
+package com.b1.qa.pages;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.b1.qa.util.TestUtility;
+import com.nft.qa.base.TestBase;
+
+public class AccountUser extends TestBase{
+	TestUtility testUtil = new TestUtility();
+	
+	@FindBy(xpath = "/html/body/div/div/div[1]/ul/li[2]/div/div[1]/div")
+	WebElement MyProfile1;
+	
+	@FindBy(xpath = "//div[contains(text(),'Users')]")
+	WebElement User;
+	
+	@FindBy(xpath = "//div[contains(text(),'Add User')]")
+	WebElement AddUser;
+	
+	@FindBy(xpath = "//input[@placeholder='First Name'][@name='firstName']")
+	WebElement FirstName;
+	
+	@FindBy(xpath = "//input[@placeholder='Last Name'][@name='lastName']")
+	WebElement LastName;
+	
+	@FindBy(xpath = "//input[@placeholder='Email Address'][@name='username']")
+	WebElement CompanyEmail;
+	
+	@FindBy(xpath = "//input[@placeholder='Phone Number'][@name='phone']")
+	WebElement Phone;
+	
+	@FindBy(xpath = "//select[@placeholder='Team Name']")
+	WebElement AddTeam;
+	
+	@FindBy(xpath = "//a[@id='filterAdd']")
+	WebElement AddFilters;
+	
+	@FindBy(xpath = "//span[contains(text(),'Cancel')]")
+	WebElement GoBackToSearchPage;
+	
+	@FindBy(xpath = "//select[@id='adtlFiltOpts']")
+	WebElement SelectFilter;
+	
+	@FindBy(xpath = "//input[@id='adtlOptTxt']")
+	WebElement SearchTextBox;
+	
+	@FindBy(xpath = "//a[@id='adtlOptApplyBtn']")
+	WebElement ApplyBtn;
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[2]/div[3]/a/label/span")
+	WebElement CheckBtn;
+	
+	@FindBy(xpath = "/html/body/div[1]/div/div[2]/div/div[2]/div[2]/div[2]/div")
+	WebElement DeleteBtn;
+	
+	@FindBy(xpath = "/descendant::a[starts-with(@class,'textoptiontoggle sc-')][4]")
+	WebElement DropDwn;
+	
+	@FindBy(xpath = "/descendant::li//input[@id='EqualTo'][@name='textSelection']")
+	WebElement RadioBtn;
+	
+	@FindBy(xpath = "//span[contains(text(),'Confirm')]")
+	WebElement ConfirmBtn;
+	
+	@FindBy(xpath = "//a[@id='fltrOptFirst Name']")
+	WebElement FirstnameBtn;
+	
+	@FindBy(xpath = "//a[@id='moreFiltOpt']")
+	WebElement OptionBtn;
+	
+	@FindBy(xpath = "//a[@id='saveFiltOpt']")
+	WebElement SelectOptionBtn;
+	
+	@FindBy(xpath = "//a[text()='Reset Filter']")
+	WebElement ResetFilterName;
+	
+	@FindBy(xpath = "//body/div[@class='container']//div[@id='navcontainer']/ul[1]/li[1]")
+	WebElement VerifyFilterName;
+	
+	@FindBy(xpath = "//*[contains(text(),'SaveNew')]")
+	WebElement ClickOnCreatedFilterToVerifyFilter;
+	
+	
+
+	public AccountUser() 
+	{
+		PageFactory.initElements(driver, this);
+	}
+	
+	public void goToProfile() {
+		TestUtility.clickOn(driver, MyProfile1, 30);
+	}
+	
+	public void gotoUser() {
+		TestUtility.clickOn(driver, User, 30);
+	}
+	
+	public void gotoAddUser() {
+		TestUtility.clickOn(driver, AddUser, 30);
+	}
+	
+	public void gotoSelectFilter() {
+		TestUtility.clickOn(driver, SelectFilter, 30);
+	}
+	
+	public void gotoOptionBtn() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", OptionBtn);
+	}
+	
+	public void gotoSelectSaveNewFilter() throws InterruptedException {
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", SelectOptionBtn);
+	}
+	
+	public void AddUserDetails() throws Exception
+	{
+		FirstName.sendKeys("Ravi");
+		LastName.sendKeys("Singh");
+		CompanyEmail.sendKeys("ravi@test.com");
+		Phone.sendKeys("1234567890");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//select[@placeholder='Team Name']")).sendKeys("NY DM");
+		Thread.sleep(2000);
+		WebElement save= driver.findElement(By.xpath("//button[@class='save']"));
+		save.click();	
+	}
+	
+	public void GoBackToSearchPage() {
+		TestUtility.clickOn(driver, GoBackToSearchPage, 30);
+	}
+	
+	public void SearhDetailsUsingFirstName() throws InterruptedException {
+		
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", FirstnameBtn);
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("/descendant::input[starts-with(@class,'fltr-txt-input sc-')][2]")).sendKeys("Ravi");
+		driver.findElement(By.xpath("/descendant::a[starts-with(@class,'dropdownapplyaction sc-')][2]")).click();
+		String Text = driver.findElement(By.xpath("//h3[contains(text(),'Ravi Singh')]")).getText();
+		Assert.assertEquals(Text,"Ravi Singh");
+		System.out.println("Newly Created user Displed in Search Result" +Text);
+	}
+	
+	public void SearchDetailUsingLastName() throws InterruptedException {
+		
+		AddFilters.click();
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//select[@id='adtlFiltOpts']")).sendKeys("Last Name");
+		driver.findElement(By.xpath("//input[@id='adtlOptTxt']")).sendKeys("Singh");
+		ApplyBtn.click();
+	}
+	
+	public void SearchUserDetailUsingMail() throws InterruptedException {
+		
+		AddFilters.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//select[@id='adtlFiltOpts']")).sendKeys("Email");
+		Thread.sleep(1000);
+		DropDwn.click();
+		Thread.sleep(1000);
+		RadioBtn.click();
+		driver.findElement(By.xpath("//input[@id='adtlOptTxt']")).sendKeys("ravi@test.com");
+		ApplyBtn.click();
+		
+	}
+	
+	public void SelectOptionCreatNewFilter() throws InterruptedException {
+		
+		Thread.sleep(1000);
+		driver.findElement(By.xpath("//input[@name='filterName']")).sendKeys("SaveNew");
+		driver.findElement(By.xpath("//span[text()='Submit']")).click();
+		
+	}
+	
+	public void VerifyCreatedFilter() throws InterruptedException {
+		Thread.sleep(1500);
+		VerifyFilterName.click();
+		String Alpha = driver.findElement(By.xpath("//*[contains(text(),'SaveNew')]")).getText();
+		Assert.assertEquals(Alpha, "SaveNew");
+		System.out.println("Newly Created user Displed in Search Filter" +Alpha);
+		
+		/*Thread.sleep(1000);
+		String Beta = driver.findElement(By.xpath("//*[contains(text(),'First Name: Ajay')]")).getText();
+		Assert.assertEquals(Beta, "Ajay");
+		System.out.println("Newly Created user First Name Displed in Search Filter" +Beta);
+		Thread.sleep(1000);
+		String Gama = driver.findElement(By.xpath("//*[contains(text(),'Last Name: shinde')]")).getText();
+		Assert.assertEquals(Gama, "shinde");
+		System.out.println("Newly Created user Last Name Displed in Search Filter" +Gama);
+		String Rays = driver.findElement(By.xpath("//*[contains(text(),'Email: pramod+1@test.com')]")).getText();
+		Assert.assertEquals(Rays, "pramod+1@test.com");
+		System.out.println("Newly Created user Email Displed in Search Filter" +Rays);
+		*/
+		
+		Thread.sleep(3000);
+		ClickOnCreatedFilterToVerifyFilter.click();
+		
+		Thread.sleep(1500);
+		Assert.assertTrue(CheckBtn.isEnabled());
+		CheckBtn.click();
+		Thread.sleep(1500);
+		DeleteBtn.click();
+		Thread.sleep(1500);
+		ConfirmBtn.click();
+	}
+
+	public void SelectResetFilter() throws InterruptedException {
+		Thread.sleep(1000);
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", OptionBtn);
+		Thread.sleep(1000);
+		JavascriptExecutor Rf = (JavascriptExecutor) driver;
+		Rf.executeScript("arguments[0].click();", ResetFilterName);
+	}
+	
+	public void VerifySavedFilter() throws InterruptedException {
+		Thread.sleep(1000);
+		VerifyFilterName.click();
+		driver.findElement(By.xpath("//i[@class='material-icons'][contains(text(),'close')]")).click();
+		driver.navigate().refresh();
+		VerifyFilterName.click();
+		driver.navigate().refresh();
+	}
+
+}

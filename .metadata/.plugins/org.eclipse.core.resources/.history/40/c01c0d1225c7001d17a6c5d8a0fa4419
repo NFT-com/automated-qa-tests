@@ -1,0 +1,418 @@
+package com.b1.qa.pages;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+
+import com.b1.qa.util.TestUtility;
+import com.nft.qa.base.TestBase;
+import com.nft.qa.excel.utility.Xls_Reader1;
+
+public class AccountsDetailsPage extends TestBase {
+
+	TestUtility testUtil = new TestUtility();
+
+	@FindBy(xpath = "/html/body/div/div/div[1]/ul/li[2]/div/div[1]/div")
+	WebElement MyProfile1;
+
+	@FindBy(xpath = "//div[contains(text(),'Accounts')]")
+	WebElement Account1;
+
+	@FindBy(xpath = "//div[@class='title-block']")
+	WebElement Contacts;
+
+	@FindBy(xpath = "//span[contains(text(),'Add New Contact')]")
+	WebElement AddNewContact;
+
+	@FindBy(xpath = "//span[contains(text(),'Delete Contact')]")
+	WebElement DeleteContact;
+
+	@FindBy(xpath = "/descendant::span[contains(text(),'Update')][2]")
+	WebElement updateBtn;
+
+	/*@FindBy(xpath = "//div[@class='field'][contains(text(),'cheesecake')]")
+	WebElement detailsData;*/
+
+	@FindBy(xpath = "//i[contains(text(),'edit')][@class='material-icons  sc-bdVaJa jTfivc']")
+	WebElement detailsData;
+	
+	
+	/*@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'Account Name')]")
+	WebElement accountNameLabelName;*/
+
+	@FindBy(xpath = "//div[contains(text(),'Account Name')]")
+	WebElement accountNameLabelName;
+
+	/*@FindBy(xpath = "//input[@value='cheesecake']")
+	WebElement accountNameTextField;*/
+
+	@FindBy(xpath = "//p[contains(text(),'cheesecake')]")
+	WebElement accountNameTextField;
+	
+/*	@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'Industry')]")
+	WebElement industryLabelName;*/
+
+	@FindBy(xpath = "//div[contains(text(),'Industry')]")
+	WebElement industryLabelName;
+	
+	/*@FindBy(xpath = "//input[@name='industry']")
+	WebElement industryTextField;*/
+
+	@FindBy(xpath = "//input[starts-with(@class,'qa-groupDetails-industry sc-')]")
+	WebElement industryTextField;
+	
+	/*@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'White Label')]")
+	WebElement whiteLabelName;*/
+	
+	@FindBy(xpath = "//div[contains(text(),'White Label')]")
+	WebElement whiteLabelName;
+	
+	/*@FindBy(xpath = "//input[@name='whiteLabel']")
+	WebElement whiteTextField;*/
+
+	@FindBy(xpath = "//input[contains(@class,'qa-groupDetails-whiteLabel sc-')]")
+	WebElement whiteTextField;
+	
+	/*@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'Company Website')]")
+	WebElement companyWebsiteLabelName;*/
+	
+	@FindBy(xpath = "//div[contains(text(),'Company Website')]")
+	WebElement companyWebsiteLabelName;
+
+	/*@FindBy(xpath = "//input[@name='website']")
+	WebElement companyWebsiteTextField;*/
+
+	@FindBy(xpath = "//input[contains(@class,'qa-groupDetails-website sc-')]")
+	WebElement companyWebsiteTextField;
+	
+	/*@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'Account Type')]")
+	WebElement accountTypeLabelName;*/
+	
+	@FindBy(xpath = "//div[contains(text(),'Account Type')]")
+	WebElement accountTypeLabelName;
+	
+	/*@FindBy(xpath = "//input[@name='accountType']")
+	WebElement accountTypeTextField;*/
+
+	@FindBy(xpath = "//div[2]//input[@value='Restaurant']")
+	WebElement accountTypeTextField;
+	
+	/*@FindBy(xpath = "//div[@class='edit show']//div[@class='label'][contains(text(),'Account Status')]")
+	WebElement accountStatusLabelName;*/
+
+	@FindBy(xpath = "//div[contains(text(),'Account Status')]")
+	WebElement accountStatusLabelName;
+	
+	
+	public AccountsDetailsPage() {
+
+		PageFactory.initElements(driver, this);
+
+	}
+
+	public void goToAccountsPage() {
+		TestUtility.clickOn(driver, MyProfile1, 30);
+		TestUtility.clickOn(driver, Account1, 30);
+
+	}
+
+	public void AddDetailsData() throws Exception {
+
+		TestUtility.clickOn(driver, detailsData, 30);
+		
+		//detailsData.click();
+		industryTextField.sendKeys("Food Service");
+		whiteTextField.sendKeys("White Label Test");
+		companyWebsiteTextField.sendKeys("https://www.google.com");
+		accountTypeTextField.sendKeys("Restaurant Test");
+		driver.findElement(By.xpath("//button[contains(text(),'Update')]")).click();
+	}
+	
+	
+	public void clickOnContacts() throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(),'Contacts')]")).click();
+		Thread.sleep(2000);// div[@class='array-json-list']//div[@class='title-block' and
+							// contains(text(),'Contacts')]
+		driver.findElement(By.xpath("//span[contains(text(),'Add New Contact')]")).click();
+		// div[@class='array-json-list']//span[contains(text(),'Add New Contact')]
+		
+	}
+
+	/*public void ContactsData() {
+
+		Xls_Reader1 reader = new Xls_Reader1(
+				"D:\\Ravi Singh\\B1AutomationNewTest\\src\\main\\java\\com\\b1\\qa\\testdata\\TestData.xlsx");
+
+		String JobTitle = reader.getCellData("Contacts", "JobTitle", 2);
+		System.out.println(JobTitle);
+
+		String FirstName = reader.getCellData("Contacts", "FirstName", 2);
+		System.out.println(FirstName);
+
+		String LastName = reader.getCellData("Contacts", "LastName", 2);
+		System.out.println(LastName);
+
+		String Address1 = reader.getCellData("Contacts", "Address1", 2);
+		System.out.println(Address1);
+
+		String Address2 = reader.getCellData("Contacts", "Address2", 2);
+		System.out.println(Address2);
+
+		String City = reader.getCellData("Contacts", "City", 2);
+		System.out.println(City);
+
+		String State = reader.getCellData("Contacts", "State", 2);
+		System.out.println(State);
+
+		String PostalCode = reader.getCellData("Contacts", "PostalCode", 2);
+		System.out.println(PostalCode);
+
+		String Country = reader.getCellData("Contacts", "Country", 2);
+		System.out.println(Country);
+
+		String ContactNotes = reader.getCellData("Contacts", "ContactNotes", 2);
+		System.out.println(ContactNotes);
+
+		String ContactEmail = reader.getCellData("Contacts", "ContactEmail", 2);
+		System.out.println(ContactEmail);
+
+		String Phone = reader.getCellData("Contacts", "Phone", 2);
+		System.out.println(Phone);
+
+		driver.findElement(By.name("contacts[0].title")).sendKeys(JobTitle);
+
+		driver.findElement(By.name("contacts[0].firstName")).sendKeys(FirstName);
+
+		driver.findElement(By.name("contacts[0].lastName")).sendKeys(LastName);
+
+		driver.findElement(By.name("contacts[0].address1")).sendKeys(Address1);
+
+		driver.findElement(By.name("contacts[0].address2")).sendKeys(Address2);
+
+		driver.findElement(By.name("contacts[0].city")).sendKeys(City);
+
+		driver.findElement(By.name("contacts[0].state")).sendKeys(State);
+
+		driver.findElement(By.name("contacts[0].postalCode")).sendKeys(PostalCode);
+
+		driver.findElement(By.name("contacts[0].country")).sendKeys(Country);
+
+		driver.findElement(By.name("contacts[0].notes")).sendKeys(ContactNotes);
+
+		driver.findElement(By.name("contacts[0].email")).sendKeys(ContactEmail);
+
+		driver.findElement(By.name("contacts[0].phone")).sendKeys(Phone);
+		
+		TestUtility.clickOn(driver, updateBtn, 30);
+
+	}*/
+
+	
+	public void checkAccountsTabs() {
+
+		List<WebElement> elements = driver.findElements(By.xpath("//div[@class='account-tabs']"));
+		System.out.println("Number of elements:" + elements.size());
+
+		for (int i = 0; i < elements.size(); i++) {
+			System.out.println("Accounts Tabs List : " + elements.get(i).getText());
+		}
+
+	}
+
+	public void checkAllTabs() {
+
+		//String details = driver.findElement(By.xpath("//div[contains(text(),'Details')]")).getText();
+		String details = driver.findElement(By.xpath("//div[contains(text(),'Details')]")).getText();
+		
+		System.out.println("Tab name is ==> " + details);
+		Assert.assertEquals(details, "Details");
+
+		String locationGroups = driver.findElement(By.xpath("//div[contains(text(),'Location Groups')]")).getText();
+		System.out.println("Tab name is ==> " + locationGroups);
+		Assert.assertEquals(locationGroups, "Location Groups");
+
+		String defaultFieldValues = driver.findElement(By.xpath("//div[contains(text(),'Default Field Values')]"))
+				.getText();
+		System.out.println("Tab name is ==> " + defaultFieldValues);
+		Assert.assertEquals(defaultFieldValues, "Default Field Values");
+
+		String customProp = driver.findElement(By.xpath("//div[contains(text(),'Custom Properties')]")).getText();
+		System.out.println("Tab name is ==> " + customProp);
+		Assert.assertEquals(customProp, "Custom Properties");
+
+		String settings = driver.findElement(By.xpath("//div[contains(text(),'Settings')]")).getText();
+		System.out.println("Tab name is ==> " + settings);
+		Assert.assertEquals(settings, "Settings");
+
+		String history = driver.findElement(By.xpath("//div[contains(text(),'History')]")).getText();
+		System.out.println("Tab name is ==> " + history);
+		Assert.assertEquals(history, "History");
+
+		String entitlements = driver.findElement(By.xpath("//div[contains(text(),'Entitlements')]")).getText();
+		System.out.println("Tab name is ==> " + entitlements);
+		Assert.assertEquals(entitlements, "Entitlements");
+
+		/*String internal = driver.findElement(By.xpath("//div[contains(text(),'Internal')]")).getText();*/
+		String internal = driver.findElement(By.xpath("//button[@class='account-tabs__item']//div//div[contains(text(),'Internal')]")).getText();
+		System.out.println("Tab name is ==> " + internal);
+		Assert.assertEquals(internal, "Internal");
+
+		/*String photos = driver.findElement(By.xpath("//div[contains(text(),'Photos')]")).getText();
+		System.out.println("Tab name is ==> " + photos);
+		Assert.assertEquals(photos, "Photos");*/
+
+	}
+
+	public void checkAccountDetails() {
+		driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+		String accountTitle = driver.findElement(By.xpath("//div[@class='account-main__title']")).getText();
+		System.out.println("Account main title name is ==> " + accountTitle);
+		Assert.assertEquals(accountTitle, "Account");
+
+		String accountclientName = driver.findElement(By.xpath("//div[@class='account-main__clientName']")).getText();
+		System.out.println("Account main client name is ==> " + accountclientName);
+	//	Assert.assertEquals(accountclientName, "cheesecake");
+
+		String accountclientWebsite = driver.findElement(By.xpath("//div[@class='account-main__clientWebsite']"))
+				.getText();
+		System.out.println("Account main clientWebsite name is ==> " + accountclientWebsite);
+		//Assert.assertEquals(accountclientWebsite,
+		//		"The Cheesecake Factory Incorporated Client | www.thecheesecakefactory.com");
+
+		String accountlocationTotal = driver.findElement(By.xpath("//div[@class='account-main__locations-total']"))
+				.getText();
+		System.out.println("Account main client location name is ==> " + accountlocationTotal);
+		//Assert.assertEquals(accountlocationTotal, "202 Locations");
+
+		String accountlocationsGroups = driver.findElement(By.xpath("//div[@class='account-main__locations-groups']"))
+				.getText();
+		System.out.println("Account main client location group name is ==> " + accountlocationsGroups);
+		//Assert.assertEquals(accountlocationsGroups, "2 Location Groups");
+
+	}
+	
+	/*public void GoToDefaultFieldValuesTab() throws Exception {
+		// Verify navigation on Default Values Tab
+		driver.findElement(By.xpath("//div[contains(text(),'Default Field Values')]")).click();
+		//WebElement RegularHours = driver.findElement(By.xpath("//div[contains(text(),'Regular Hours')]"));
+		//System.out.println("Click on Default Field Values tab ==> " + RegularHours);
+		//Assert.assertEquals(RegularHours, "Regular Hours");
+		// Navigate back to Details tab
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(),'Details')]")).click();
+	//	WebElement detailsTab = driver.findElement(By.xpath("//div[contains(text(),'Details')]"));
+		//System.out.println("Click on Details tab ==> " + detailsTab);
+		//Assert.assertEquals(detailsTab, "Contacts");
+		
+		
+		
+	}*/
+	
+	public void CheckDetailsData() throws Exception {
+		Thread.sleep(3000);
+		String accountNameLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[@class='normal show']//div[@class='label'][contains(text(),'Account Name')]")));
+		System.out.println(accountNameLabelName);
+		
+		String accountNameLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[@class='field'][contains(text(),'cheesecake')]")));
+		System.out.println(accountNameLabelName1);
+		
+		
+		String industryLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[@class='normal show']//div[@class='label'][contains(text(),'Industry')]")));
+		System.out.println(industryLabelName);
+		
+		String industryLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(text(),'Food Service')]")));
+		System.out.println(industryLabelName1);
+		
+		String whiteLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[@class='normal show']//div[@class='label'][contains(text(),'White Label')]")));
+		System.out.println(whiteLabelName);
+		
+		String whiteLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(text(),'White Label Test')]")));
+		System.out.println(whiteLabelName1);
+		
+		String companyWebsiteLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(@class,'normal show')]//div[contains(@class,'label')][contains(text(),'Company Website')]")));
+		System.out.println(companyWebsiteLabelName);
+		
+		String companyWebsiteLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(text(),'https://www.google.com')]")));
+		System.out.println(companyWebsiteLabelName1);
+		
+		String accountTypeLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(@class,'normal show')]//div[contains(@class,'label')][contains(text(),'Account Type')]")));
+		System.out.println(accountTypeLabelName);
+		
+		String accountTypeLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(text(),'Restaurant')]")));
+		System.out.println(accountTypeLabelName1);
+		
+		String accountStatusLabelName = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(@class,'normal show')]//div[contains(@class,'label')][contains(text(),'Account Status')]")));
+		System.out.println(accountStatusLabelName);
+		
+		String accountStatusLabelName1 = (String) ((JavascriptExecutor) driver)
+				.executeScript("return arguments[0].innerText;", driver.findElement(
+						By.xpath("//div[contains(@class,'field')][contains(text(),'Live')]")));
+		System.out.println(accountStatusLabelName1);
+	
+
+	}
+	
+	/*public void clearDetailsData() {
+		TestUtility.clickOn(driver, detailsData, 30);
+		driver.findElement(By.xpath("//input[contains(@value,'Food Service')]")).clear();
+		driver.findElement(By.xpath("//input[contains(@value,'White Label Test')]")).clear();
+		driver.findElement(By.xpath("//input[contains(@value,'https://www.google.com')]")).clear();
+		driver.findElement(By.xpath("//input[contains(@value,'Restaurant Test')]")).clear();
+		driver.findElement(By.xpath("//span[contains(text(),'Update')]")).click();
+		
+	}*/
+	
+	/*public void CheckContactsData() throws Exception {
+		Thread.sleep(3000);
+		//driver.findElement(By.xpath("// button[@type='submit']//div//div//span[contains(text(),'Update')]")).click();
+		//Thread.sleep(3000); // button[@type='submit']//div//div//span[contains(text(),'Update')]
+		List<WebElement> elements = driver.findElements(By.xpath("//div[@class='array-block']"));
+		System.out.println("Number of elements:" + elements.size());
+
+		for (int i = 0; i < elements.size(); i++) {
+			System.out.println("Contacts Records List : " + elements.get(i).getText());
+		}
+
+	}*/
+	
+	/*public void deleteContact() {
+
+		driver.findElement(By.xpath("//label[contains(text(),'Postal Code')]")).click();
+
+		TestUtility.clickOn(driver, DeleteContact, 30);
+		TestUtility.clickOn(driver, updateBtn, 30);
+
+	}*/
+	
+}

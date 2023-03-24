@@ -1,0 +1,163 @@
+package com.b1.qa.pages;
+
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.b1.qa.util.TestUtility;
+import com.nft.qa.base.TestBase;
+
+public class HomePage extends TestBase {
+
+	TestUtility testUtil = new TestUtility();
+
+	@FindBy(xpath = "//i[contains(text(),'language')]")
+	WebElement context;
+
+	@FindBy(xpath = "//input[contains(@placeholder,'Select Accounts')]")
+	WebElement selectAccounts;
+
+	@FindBy(xpath = "//div[contains(text(),'Cheesecake Factory')]")
+	WebElement ch;
+	
+	@FindBy(xpath = "//div[contains(text(),'geostix2')]")
+	WebElement gt;
+	
+	@FindBy(xpath = "//div[contains(text(),'Test syndication process')]")
+	WebElement TestSyndication;
+
+	@FindBy(xpath = "//div[starts-with(@class,'cs-alllocations sc-')]//div[contains(text(),'All Locations')]")
+	WebElement AllLocation;
+	
+	@FindBy(xpath = "//div[contains(text(),'Restaurants')]")
+	WebElement bj;
+	
+	@FindBy(xpath = "//div[contains(text(),'Brandify Test Account')]")
+	WebElement bta;
+	
+	@FindBy(xpath = "//div[contains(text(),'geostix')]")
+	WebElement geostix;
+	
+	@FindBy(xpath = "/descendant::div[contains(text(),'Fortuna Restaurant')][2]")
+	WebElement FortunaResto;
+	
+	@FindBy(xpath = "/descendant::div[contains(text(),'Brandify')][1]")
+	WebElement Brandify;
+	
+	@FindBy(xpath = "//div[contains(text(),\"DICK'S Sporting Goods\")]")
+	WebElement DSG;
+	
+	@FindBy(xpath = "//div[contains(text(),'Express Oil Change & Tire Engineers')]")
+	WebElement EOCnTE;
+	
+	@FindBy(xpath = "//span[contains(text(),'echo')]")
+	WebElement DefaultLocation;
+
+	@FindBy(xpath = "//button[@id='change_account']")
+	WebElement ChangeAccount;
+
+	@FindBy(xpath = "//li[@id='accounts_chzn_o_205']")
+	WebElement GeostixAutomation;
+	
+	@FindBy(xpath = "//button[@id='change_account']")
+	WebElement SelectAccount;
+	
+	public HomePage() {
+
+		PageFactory.initElements(driver, this);
+
+	}
+
+	public void clickOnContextAndSelectCheesecake() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, ch, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	public void clickOnContextAndSelectgeostix2() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, gt, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	public void clickOnContextAndSelectTestSyndication() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, TestSyndication, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+
+	public void clickOnContextAndSelectBrandifyTestAccount() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, bta, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	public void clickOnContextAndSelectBJ() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, bj, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	public void clickOnContextAndSelectgeostix() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, geostix, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	public void clickOnContextAndFortunaRestaurant() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, FortunaResto, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	public void clickOnContextAndBrandify() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, Brandify, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	
+	public void clickOnContextAndDSG() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, DSG, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	public void clickOnContextAndEOCnTE() {
+
+		TestUtility.clickOn(driver, context, 20);
+		TestUtility.clickOn(driver, selectAccounts, 20);
+		TestUtility.clickOn(driver, EOCnTE, 20);
+		TestUtility.clickOn(driver, AllLocation, 20);
+
+	}
+	
+	
+	
+}

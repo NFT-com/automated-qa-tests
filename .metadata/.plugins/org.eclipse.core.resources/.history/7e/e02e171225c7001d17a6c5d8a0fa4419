@@ -1,0 +1,443 @@
+package com.b1.qa.pages;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.b1.qa.testcases.NEDPPageTest;
+import com.nft.qa.base.TestBase;
+
+public class StudentGoal900R extends TestBase {
+
+	NEDPPageTest nedpPageTest;
+	NEDPPage NedpPage;
+
+	@FindBy(xpath = "//button[@ng-click='goToManagement()']")
+	WebElement SignInBtn;
+
+	@FindBy(xpath = "//input[@ng-model='agencyCode']")
+	WebElement AgencySite;
+
+	@FindBy(xpath = "//input[@ng-model='userName']")
+	WebElement User;
+
+	@FindBy(xpath = "//input[@ng-model='password']")
+	WebElement Password;
+
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement LoginBtn;
+
+	@FindBy(xpath = "//button[@class='btn btn-lg btn-success font22 ng-scope'][contains(text(),'Take a test')]")
+	WebElement TakeATest;
+
+	@FindBy(xpath = "//input[@ng-model='agencyCode']")
+	WebElement Agency;
+
+	@FindBy(xpath = "//button[@class='btn btn-blue btn-lg font22']")
+	WebElement StationLogin;
+
+	@FindBy(xpath = "//input[@ng-model='login.studentId'][@id='studentId']")
+	WebElement StudentID;
+
+	@FindBy(xpath = "//*[@class='svg-inline--fa fa-arrow-right fa-w-14 fa-2x']")
+	WebElement StudentEnter;
+
+	@FindBy(xpath = "//button[@class='swal2-confirm swal2-styled']")
+	WebElement StudentConfirmation;
+
+	@FindBy(xpath = "//input[@id='student0']")
+	WebElement FirstName;
+
+	@FindBy(xpath = "//input[@id='student1']")
+	WebElement MiddleName;
+
+	@FindBy(xpath = "//input[@id='student2']")
+	WebElement LastName;
+
+	@FindBy(xpath = "//button[@id='demoNextBtn']")
+	WebElement RegisterNextButton;
+
+	@FindBy(xpath = "//button[contains(text(),'Save')]")
+	WebElement OverviewSave;
+
+	@FindBy(xpath = "//div[@id='mainContainer']//div[2]//div[1]//button[1]//h3[1]")
+	WebElement TestR900;
+
+	@FindBy(xpath = "//button[@class='btn btn-primary']")
+	WebElement SiteSelection;
+
+	@FindBy(xpath = "//span[@class='btn btn-lg bold-blue fa-2-5x']//*[@class='svg-inline--fa fa-arrow-right fa-w-14']")
+	WebElement DirectionNextButton;
+
+	@FindBy(xpath = "//button[@ng-click='pin()'][@class='btn btn-circle btn-lg btn-default pin-button ng-scope']")
+	WebElement TimmerExpandButton;
+
+	@FindBy(xpath = "//*[@class='svg-inline--fa fa-arrow-right fa-w-14 fa-2x']")
+	WebElement NextQnBtn;
+
+	@FindBy(xpath = "//button[@ng-click='success()']")
+	WebElement BeginTest;
+
+	@FindBy(xpath = "/descendant::button[@ng-click='startSession(r.TestingSessionId)'][1]")
+	WebElement StartBtn;
+
+	@FindBy(xpath = "//button[@ng-click='continue()']")
+	WebElement StartBtn1;
+
+	@FindBy(xpath = "//tr[1]//td[1]//button[1]")
+	WebElement Edit;
+
+	@FindBy(xpath = "//button[contains(text(),'Add new station')]")
+	WebElement Addnewstation;
+
+	@FindBy(xpath = "//tr[5]//td[1]//div[1]//button[1]")
+	WebElement StationChekBox;
+
+	@FindBy(xpath = "//button[contains(text(),'Select')]")
+	WebElement Select;
+
+	@FindBy(xpath = "//button[contains(text(),'Save')]")
+	WebElement Save;
+
+	@FindBy(xpath = "//*[@id=\"modalitiessessionConfigTab\"]/modality-check[1]/div/div[1]/div[2]/div/div[1]/span/i")
+	WebElement ReadingSessionSelect;
+
+	@FindBy(xpath = "//span[contains(text(),'[ Select Form to Override with ... ]')]")
+	WebElement ReadingSelectOvrride;
+
+	@FindBy(xpath = "//*[@id=\"modalitiessessionConfigTab\"]/modality-check[3]/div/div[1]/div[2]/div/div[1]/span/i")
+	WebElement ListeningSessionSelect;
+
+	@FindBy(xpath = "//span[contains(text(),'[ Select Form to Override with ... ]')]")
+	WebElement ListeningSelectOvrride;
+
+	public StudentGoal900R() {
+		PageFactory.initElements(driver, this);
+	}
+
+	public void ConfigSession() throws InterruptedException {
+
+		Thread.sleep(4000);
+		Edit.click();
+		Thread.sleep(3000);
+
+		ReadingSessionSelect.click();
+		ReadingSelectOvrride.click();
+		driver.findElement(By.xpath("//th[1]//input[1]")).sendKeys("900R");
+		driver.findElement(By.xpath("//td[contains(text(),'Reading GOALS Appraisal')]")).click();
+		Thread.sleep(1500);
+		Select.click();
+		Thread.sleep(4000);
+		/*Thread.sleep(2000);
+		ListeningSessionSelect.click();
+		ListeningSelectOvrride.click();
+		driver.findElement(By.xpath("//th[1]//input[1]")).sendKeys("041L");
+		driver.findElement(By.xpath("//td[contains(text(),'Listening GOALS Level A')]")).click();
+		Thread.sleep(1500);
+		Select.click();
+		Thread.sleep(1500);*/
+		Save.click();
+
+	}
+
+	public void StartSession() throws InterruptedException {
+
+		Thread.sleep(6000);
+		driver.findElement(By.xpath("/descendant::button[@ng-click='startSession(r.TestingSessionId)'][1]"))
+				.isEnabled();
+		// StartBtn.click();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].click();", StartBtn);
+
+		JavascriptExecutor jt = (JavascriptExecutor) driver;
+		jt.executeScript("arguments[0].click();", StartBtn1);
+		// StartBtn1.click();
+
+	}
+
+	public void TakeATest() throws InterruptedException {
+		Thread.sleep(2000);
+		TakeATest.click();
+	}
+
+	public void StationLogin() throws InterruptedException {
+		Thread.sleep(2000);
+		Agency.sendKeys("TCQARH");
+		Thread.sleep(1000);
+		User.sendKeys("james");
+		Thread.sleep(1000);
+		Password.sendKeys("james");
+		Thread.sleep(1000);
+		StationLogin.click();
+	}
+
+	public void StationRegistration() throws InterruptedException {
+		// Thread.sleep(2000);
+		driver.findElement(By.xpath("//span[contains(text(),'Site One')]")).click();
+		driver.findElement(By.xpath("//span[@class='font20 ng-binding ng-scope'][contains(text(),'Site One')]"))
+				.click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//body[@class='ng-scope block-ui block-ui-anim-fade']/div[@id='mainContainer']/div[@class='ng-scope view-container']/div[@class='vertical-center ng-scope']/div[@class='col-xs-12 col-sm-10 col-md-8 col-lg-7 col-xl-5']/div[@class='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12']/div[@class='col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12']/div[2]/div[1]/div[1]/div[1]/span[1]/i[1]"))
+				.click();
+		driver.findElement(By.xpath("//span[@class='font20 ng-binding ng-scope'][contains(text(),'TC')]")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath(
+				"//div[contains(@class,'col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12')]//div[3]//div[1]//input[@ng-model='stationName']"))
+				.click();
+		driver.findElement(By.xpath("//input[@ng-model='stationName']")).sendKeys("Tracker");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//input[@ng-model='registrationStatus']")).isDisplayed();
+		WebElement RegisterBtn = driver.findElement(By.xpath("//button[contains(text(),'Register')]"));
+		if (RegisterBtn.isEnabled()) {
+			Thread.sleep(2000);
+			RegisterBtn.click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='swal2-confirm swal2-styled']")).click();
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//button[@class='swal2-confirm swal2-styled']")).click();
+		} else {
+			System.out.println("The Registration Button is not Enabled");
+		}
+
+	}
+
+	public void StudentLogin() throws InterruptedException {
+		Thread.sleep(5000);
+		StudentID.sendKeys("202");
+		Thread.sleep(2000);
+		StudentEnter.click();
+		Thread.sleep(2000);
+		StudentConfirmation.click();
+		Thread.sleep(2000);
+		// driver.findElement(By.xpath("//button[contains(text(),'Next')]")).click();
+
+	}
+
+	public void StudentStartTest() throws InterruptedException {
+		TestR900.click();
+		Thread.sleep(2000);
+		if (SiteSelection.isDisplayed()) {
+			System.out.println("Student Need to Select Site");
+			SiteSelection.click();
+		} else {
+			System.out.println("Student does not need to select site");
+		}
+		Thread.sleep(2000);
+		DirectionNextButton.click();
+		Thread.sleep(2000);
+		// TimmerExpandButton.click();
+		// Thread.sleep(2000);
+	}
+
+	public void StartPractice() throws InterruptedException {
+
+		driver.findElement(By.xpath("//button[@class='btn btn-circle btn-lg btn-default pin-button ng-scope']"))
+				.click();
+
+		driver.findElement(By.xpath("//span[contains(text(),'to Mariela Sanchez')]")).click();
+
+		NextQnBtn.click();
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("//button[contains(text(),'Ok')]")).click();
+		Thread.sleep(1500);
+		BeginTest.click();
+	}
+
+	public void BeginTest() throws InterruptedException {
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(1500);
+		driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(4000);
+		WebElement twentythree = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]"));
+		JavascriptExecutor jc = (JavascriptExecutor) driver;
+		jc.executeScript("arguments[0].click();", twentythree);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(4000);
+		WebElement twentyfour = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]"));
+		JavascriptExecutor jt = (JavascriptExecutor) driver;
+		jt.executeScript("arguments[0].click();", twentyfour);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][2]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(4000);
+		WebElement twentyfive = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]"));
+		JavascriptExecutor jv = (JavascriptExecutor) driver;
+		jv.executeScript("arguments[0].click();", twentyfive);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(3000);
+		WebElement twentysix = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]"));
+		JavascriptExecutor jx = (JavascriptExecutor) driver;
+		jx.executeScript("arguments[0].click();", twentysix);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][1]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(3000);
+		WebElement twentyseven = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]"));
+		JavascriptExecutor jy = (JavascriptExecutor) driver;
+		jy.executeScript("arguments[0].click();", twentyseven);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][4]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(3000);
+		WebElement twentyeight = driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]"));
+		JavascriptExecutor jz = (JavascriptExecutor) driver;
+		jz.executeScript("arguments[0].click();", twentyeight);
+		// driver.findElement(By.xpath("/descendant::button[@ng-style='stylebtn'][3]")).click();
+		NextQnBtn.click();
+
+		Thread.sleep(2000);
+		WebElement EndTest = driver.findElement(By.xpath("//button[contains(text(),'End Test')]"));
+		JavascriptExecutor jb = (JavascriptExecutor) driver;
+		jb.executeScript("arguments[0].click();", EndTest);
+		// driver.findElement(By.xpath("//button[contains(text(),'End
+		// Test')]")).click();
+		Thread.sleep(2000);
+
+		WebElement Next = driver.findElement(By.xpath("//span[@id='nextBtn']"));
+		JavascriptExecutor ja = (JavascriptExecutor) driver;
+		ja.executeScript("arguments[0].click();", Next);
+		// driver.findElement(By.xpath("//span[@id='nextBtn']")).click();
+
+	}
+
+	public void StopProctorSession() throws InterruptedException {
+
+		Thread.sleep(1500);
+		JavascriptExecutor jv = (JavascriptExecutor) driver;
+		jv.executeScript("arguments[0].click();", SignInBtn);
+
+		Thread.sleep(3000);
+		AgencySite.clear();
+		JavascriptExecutor jf = (JavascriptExecutor) driver;
+		jf.executeScript("arguments[0].click();", AgencySite);
+		AgencySite.sendKeys("TCQARH");
+
+		User.clear();
+		JavascriptExecutor jg = (JavascriptExecutor) driver;
+		jg.executeScript("arguments[0].click();", User);
+		User.sendKeys("james");
+
+		JavascriptExecutor jh = (JavascriptExecutor) driver;
+		jh.executeScript("arguments[0].click();", Password);
+		Password.sendKeys("james");
+
+		LoginBtn.click();
+	}
+
+	public void StopSession() throws InterruptedException {
+
+		Thread.sleep(3000);
+		WebElement Manage = driver.findElement(By.xpath("//button[contains(text(),'Manage')]"));
+		JavascriptExecutor ja = (JavascriptExecutor) driver;
+		ja.executeScript("arguments[0].click();", Manage);
+		// driver.findElement(By.xpath("//button[contains(text(),'Manage')]")).click();
+		Thread.sleep(1500);
+		WebElement Stop = driver.findElement(By.xpath("//button[contains(text(),'Stop')]"));
+		JavascriptExecutor jb = (JavascriptExecutor) driver;
+		jb.executeScript("arguments[0].click();", Stop);
+		// driver.findElement(By.xpath("//button[contains(text(),'Stop')]")).click();
+		Thread.sleep(3000);
+
+		driver.findElement(By.xpath("/descendant::button[@ng-click='logout($event,{withRedirect:true})'][2]")).click();
+		// nedpPageTest.SessionLogout();
+		Thread.sleep(3000);
+		WebElement Exit = driver.findElement(By.xpath("/descendant::button[@ng-click='exit()'][2]"));
+		JavascriptExecutor jc = (JavascriptExecutor) driver;
+		jc.executeScript("arguments[0].click();", Exit);
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package com.nft;
+
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.nft.qa.base.TestBase;
+import com.nft.home_page.homepage;
+
+public class AppTest  extends TestBas){
+	homepage HomePage;
+	
+	public AppTest() {
+		super();
+	}
+
+	@BeforeClass(alwaysRun = true)
+	public void setUp() {
+		initialization();
+		HomePage = new homepage();
+	}
+
+	@Test(groups = {"regression"}, priority = 1)
+	public void NavigateToNFT() throws Exception {
+		HomePage.NavigateToNFT();
+	}
+}

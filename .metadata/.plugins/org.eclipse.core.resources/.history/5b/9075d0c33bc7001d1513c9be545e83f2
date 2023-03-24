@@ -1,0 +1,29 @@
+package com.nft.broken_links_Test.copy;
+
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Test;
+import com.nft.qa.base.TestBase;
+import com.nft.home_page.homepage;
+
+public class BrokenLinks_Test  extends TestBase{
+	
+	private static final BrokenLinks_Test BrokenLinks = null;
+
+
+	public BrokenLinks_Test() {
+		super();
+	}
+
+
+	@Test(groups = {"regression"}, priority = 1)
+	public void BrokenLinks() throws Exception {
+		BrokenLinks.BrokenLinks();
+	}
+	
+	/*
+	 * @AfterClass(alwaysRun = true) public void tearDown() { driver.quit();
+	 * 
+	 * }
+	 */
+}
