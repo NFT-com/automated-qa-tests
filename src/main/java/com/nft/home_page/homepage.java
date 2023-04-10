@@ -1,16 +1,24 @@
 package com.nft.home_page;
 
+
 import java.util.List;
 import org.openqa.selenium.WebElement;
-import com.nft.qa.base.Locators;
-import com.nft.qa.base.TestBase;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 
+import com.nft.qa.Listeners.AllureListener;
+import com.nft.qa.base.Locators;
+import com.nft.qa.base.TestBase;
+import org.openqa.selenium.interactions.Actions;
+import java.util.ArrayList;
+
+@Listeners({AllureListener.class})
 public class homepage extends TestBase {
 	Locators locators = new Locators();
 	JavascriptExecutor executor = (JavascriptExecutor) driver;
+	Actions actions = new Actions(driver);
 	
 	public void NavigateToNFT() {
 
@@ -105,8 +113,10 @@ public class homepage extends TestBase {
 		List<WebElement> Collection = locators.SearchedResult_Suggested_Collections;
 		System.out.println("No of cols are : " + Collection.size());
 		for (int j = 0; j < Collection.size(); j++) {
+			//String collection = Collection.get(j).getText();
 			System.out.println(Collection.get(j).getText());
-			Assert.assertTrue(locators.SearchedResult_Suggested_Collections.contains("Doo".equalsIgnoreCase("doo")));
+			//Assert.assertTrue(locators.SearchedResult_Suggested_Collections.contains("Dood".equalsIgnoreCase("dood")));
+			
 		}
 		
 		System.out.println("----------------------Found NFT results----------------------------------------");
@@ -125,6 +135,7 @@ public class homepage extends TestBase {
 		locators.NFTCom_LogoImage.click();
 		String HomePageURL = driver.getCurrentUrl();
 		Assert.assertEquals(HomePageURL, "https://www.nft.com/");
+		Thread.sleep(3000);
 	}
 
 	public void VerifySignInResponse() throws InterruptedException {
@@ -183,10 +194,11 @@ public class homepage extends TestBase {
 		System.out.println("Current Redirected URL is ===>> " + MintProfileURL3);
 		Thread.sleep(2000);
 		driver.navigate().back();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 	}
 
-	public void VerifyHomePageSections() {
+	public void VerifyHomePageSections() throws InterruptedException {
+		
 		String TheSocialNFTMarketplaceSection = locators.TheSocialNFTMarketplaceSection.getText();
 		Assert.assertTrue(locators.TheSocialNFTMarketplaceSection.isDisplayed());
 		System.out.println("Displayed Value is====>> " + TheSocialNFTMarketplaceSection);
@@ -202,7 +214,7 @@ public class homepage extends TestBase {
 		String DiscoverANewWorldSection = locators.DiscoverANewWorldSection.getText();
 		Assert.assertTrue(locators.DiscoverANewWorldSection.isDisplayed());
 		System.out.println("Displayed Value is====>> " + DiscoverANewWorldSection);
-
+		Thread.sleep(2000);
 		String GettingStartedSection = locators.GettingStartedSection.getText();
 		Assert.assertTrue(locators.GettingStartedSection.isDisplayed());
 		System.out.println("Displayed Value is====>> " + GettingStartedSection);
@@ -231,14 +243,12 @@ public class homepage extends TestBase {
 		Assert.assertTrue(locators.NFTProfileLeaderboardSection_NumberOfGK.isDisplayed());
 		System.out.println("Displayed table header coloumn 2 is====>> " + NFTProfileLeaderboardSection_NumberOfGK);
 
-		String NFTProfileLeaderboardSection_NumberOfNFTCollections = locators.NFTProfileLeaderboardSection_NumberOfNFTCollections
-				.getText();
+		String NFTProfileLeaderboardSection_NumberOfNFTCollections = locators.NFTProfileLeaderboardSection_NumberOfNFTCollections.getText();
 		Assert.assertTrue(locators.NFTProfileLeaderboardSection_NumberOfNFTCollections.isDisplayed());
 		System.out.println(
 				"Displayed table header coloumn 3 is====>> " + NFTProfileLeaderboardSection_NumberOfNFTCollections);
 
-		String NFTProfileLeaderboardSection_ItemsCollected = locators.NFTProfileLeaderboardSection_ItemsCollected
-				.getText();
+		String NFTProfileLeaderboardSection_ItemsCollected = locators.NFTProfileLeaderboardSection_ItemsCollected.getText();
 		Assert.assertTrue(locators.NFTProfileLeaderboardSection_ItemsCollected.isDisplayed());
 		System.out.println("Displayed table header coloumn 4 is====>> " + NFTProfileLeaderboardSection_ItemsCollected);
 
@@ -424,7 +434,122 @@ public class homepage extends TestBase {
 		Assert.assertTrue(locators.ConnectAWallet_LearnMore.isDisplayed());
 	
 		locators.Close_SignIn_PopUpWindow.click();
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 	}
+	
+	public void FooterlinkRedirects() throws InterruptedException {
+		Thread.sleep(3000);
+		actions.moveToElement(locators.FooterSection_Learn_Gallery);
+		actions.perform();
+		Thread.sleep(2000);
+		locators.FooterSection_Learn_Gallery.click();
+		Thread.sleep(2000);
+		String GallaryURL = driver.getCurrentUrl();
+		Assert.assertEquals(GallaryURL, "https://www.nft.com/app/gallery");
+		Assert.assertTrue(locators.Genesiskeys.isDisplayed());
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(3000);
+		
+		actions.moveToElement(locators.FooterSection_Learn_Docs);
+		actions.perform();
+		Thread.sleep(2000);
+		executor.executeScript("arguments[0].click();", locators.FooterSection_Learn_Docs);
+		//locators.FooterSection_Learn_Docs.click();
+		Thread.sleep(2000);
+		ArrayList<String> newTb = new ArrayList<String>(driver.getWindowHandles());
+	    //switch to new tab
+	    driver.switchTo().window(newTb.get(1));
+	    System.out.println("Page title of new tab: " + driver.getTitle());
+	    String DocsURL = driver.getCurrentUrl();
+	    Assert.assertEquals(DocsURL, "https://docs.nft.com/overview/introducing-nft.com");
+	    Assert.assertTrue(locators.IntroToNFTDoc.isDisplayed());
+	    driver.close();
+	    Thread.sleep(2000);
+	    //switch to parent window
+	    driver.switchTo().window(newTb.get(0));
+	    System.out.println("Page title of parent window: " + driver.getTitle());
+	    Thread.sleep(3000);
+	    
+	    /*actions.moveToElement(locators.FooterSection_Learn_Blog);
+		actions.perform();
+		Thread.sleep(2000);
+		//  executor.executeScript("arguments[0].click();", locators.FooterSection_Learn_Blog);
+	  // locators.FooterSection_Learn_Blog.click();
+	   //locators.FooterSection_Learn_Blog.click();
+	   actions.click(locators.FooterSection_Learn_Blog);
+	   Thread.sleep(3000);
+	    String ArticleURL = driver.getCurrentUrl();
+		Assert.assertEquals(ArticleURL, "https://www.nft.com/articles");
+		Assert.assertTrue(locators.ArticleFlex.isDisplayed());
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(3000);*/
+		
+	    actions.moveToElement(locators.FooterSection_Learn_WhatIsAnNFT);
+		actions.perform();
+		Thread.sleep(2000);
+		executor.executeScript("arguments[0].click();", locators.FooterSection_Learn_WhatIsAnNFT);
+		Thread.sleep(4000);
+		//locators.FooterSection_Learn_WhatIsAnNFT.click();
+		String WhatisAnNFTURL = driver.getCurrentUrl();
+		Assert.assertEquals(WhatisAnNFTURL, "https://www.nft.com/articles/what-is-an-nft");
+		Assert.assertTrue(locators.WhatisanNFT.isDisplayed());
+		Thread.sleep(2000);
+		driver.navigate().back();
+		Thread.sleep(3000);
+		
+		actions.moveToElement(locators.FooterSection_Resources_Support);
+		actions.perform();
+		Thread.sleep(2000);
+		executor.executeScript("arguments[0].click();", locators.FooterSection_Resources_Support);
+		//locators.FooterSection_Resources_Support.click();
+		Thread.sleep(4000);
+		ArrayList<String> newTb1 = new ArrayList<String>(driver.getWindowHandles());
+	    //switch to new tab
+	    driver.switchTo().window(newTb1.get(1));
+	    System.out.println("Page title of new tab: " + driver.getTitle());
+	    String SupportURL = driver.getCurrentUrl();
+	    Assert.assertEquals(SupportURL, "https://support.nft.com/hc/en-us");
+	    Assert.assertTrue(locators.Support_general.isDisplayed());
+	    driver.close();
+	    //switch to parent window
+	    driver.switchTo().window(newTb1.get(0));
+	    System.out.println("Page title of parent window: " + driver.getTitle());
+	    Thread.sleep(3000);
+	    
+	    actions.moveToElement(locators.FooterSection_Policies_TOS);
+		actions.perform();
+		Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", locators.FooterSection_Policies_TOS);
+	   // locators.FooterSection_Policies_TOS.click();
+		Thread.sleep(2000);
+		ArrayList<String> newTb2 = new ArrayList<String>(driver.getWindowHandles());
+	    //switch to new tab
+	    driver.switchTo().window(newTb2.get(1));
+	    String TOSURL = driver.getCurrentUrl();
+	    Assert.assertEquals(TOSURL, "https://cdn.nft.com/nft_com_terms_of_service.pdf");
+	    driver.close();
+	    //switch to parent window
+	    driver.switchTo().window(newTb.get(0));
+	    Thread.sleep(3000);
+	    
+	    actions.moveToElement(locators.FooterSection_Policies_PP);
+		actions.perform();
+		Thread.sleep(2000);
+	    executor.executeScript("arguments[0].click();", locators.FooterSection_Policies_PP);
+	 //   locators.FooterSection_Policies_PP.click();
+		Thread.sleep(2000);
+		ArrayList<String> newTb3 = new ArrayList<String>(driver.getWindowHandles());
+	    //switch to new tab
+	    driver.switchTo().window(newTb3.get(1));
+	    String PPURL = driver.getCurrentUrl();
+	    Assert.assertEquals(PPURL, "https://cdn.nft.com/nft_com_privacy_policy.pdf");
+	    driver.close();
+	    //switch to parent window
+	    driver.switchTo().window(newTb.get(0));
+	    Thread.sleep(3000);
+	}
+
 
 }

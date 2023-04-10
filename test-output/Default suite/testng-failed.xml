@@ -3,13 +3,14 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nft.home_page_Test.HomePage_Test">
+      <class name="com.nfts.Page_Test.Learn_DocsPage_Test">
         <methods>
-          <include name="VerifySearchFieldResponse"/>
-          <include name="tearDown"/>
+          <include name="NavigateToLearn_DocsPage"/>
+          <include name="ValidateLearn_DocsPage"/>
           <include name="setUp"/>
+          <include name="tearDown"/>
         </methods>
-      </class> <!-- com.nft.home_page_Test.HomePage_Test -->
+      </class> <!-- com.nfts.Page_Test.Learn_DocsPage_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

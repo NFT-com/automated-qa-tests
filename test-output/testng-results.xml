@@ -1,45 +1,211 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="5" failed="1" skipped="0">
+<testng-results ignored="0" total="28" passed="27" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-03-24T12:51:00 IST" name="Default suite" finished-at="2023-03-24T12:51:11 IST" duration-ms="11348">
+  <suite started-at="2023-04-04T10:37:19 IST" name="Regression Suite" finished-at="2023-04-04T10:43:19 IST" duration-ms="360140">
     <groups>
       <group name="regression">
-        <method signature="HomePage_Test.NavigateToNFT()[pri:1, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="NavigateToNFT" class="com.nft.home_page_Test.HomePage_Test"/>
-        <method signature="HomePage_Test.ValidateNFTLogoImage()[pri:2, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="ValidateNFTLogoImage" class="com.nft.home_page_Test.HomePage_Test"/>
-        <method signature="HomePage_Test.ValidateNFTcomHeaderOptions()[pri:3, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="ValidateNFTcomHeaderOptions" class="com.nft.home_page_Test.HomePage_Test"/>
-        <method signature="HomePage_Test.VerifyDiscoverHeaderDropDownoptions()[pri:4, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="VerifyDiscoverHeaderDropDownoptions" class="com.nft.home_page_Test.HomePage_Test"/>
-        <method signature="HomePage_Test.VerifyLearnHeaderDropDownoptions()[pri:5, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="VerifyLearnHeaderDropDownoptions" class="com.nft.home_page_Test.HomePage_Test"/>
-        <method signature="HomePage_Test.VerifySearchFieldResponse()[pri:6, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" name="VerifySearchFieldResponse" class="com.nft.home_page_Test.HomePage_Test"/>
+        <method signature="BrokenLinks_Test.GetAllURLs()[pri:1, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" name="GetAllURLs" class="com.nft.broken_links_Test.BrokenLinks_Test"/>
+        <method signature="BrokenLinks_Test.ValidateAllBrokenImages()[pri:3, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" name="ValidateAllBrokenImages" class="com.nft.broken_links_Test.BrokenLinks_Test"/>
+        <method signature="BrokenLinks_Test.ValidateTheBrokenLinks()[pri:2, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" name="ValidateTheBrokenLinks" class="com.nft.broken_links_Test.BrokenLinks_Test"/>
+        <method signature="Discover_CollectionsPage_Test.NavigateToDiscover_CollectionsPage()[pri:1, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" name="NavigateToDiscover_CollectionsPage" class="com.nfts.Page_Test.Discover_CollectionsPage_Test"/>
+        <method signature="Discover_CollectionsPage_Test.ValidateDiscoverCollectionsPage()[pri:2, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" name="ValidateDiscoverCollectionsPage" class="com.nfts.Page_Test.Discover_CollectionsPage_Test"/>
+        <method signature="Discover_NFTsPage_Test.NavigateToDiscover_NFTsPage()[pri:1, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" name="NavigateToDiscover_NFTsPage" class="com.nfts.Page_Test.Discover_NFTsPage_Test"/>
+        <method signature="Discover_NFTsPage_Test.ValidateDiscoverNFTsPage()[pri:2, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" name="ValidateDiscoverNFTsPage" class="com.nfts.Page_Test.Discover_NFTsPage_Test"/>
+        <method signature="Discover_ProfilesPage_Test.NavigateToDiscover_ProfilesPage()[pri:1, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" name="NavigateToDiscover_ProfilesPage" class="com.nfts.Page_Test.Discover_ProfilesPage_Test"/>
+        <method signature="Discover_ProfilesPage_Test.ValidateDiscoverProfilesPage()[pri:2, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" name="ValidateDiscoverProfilesPage" class="com.nfts.Page_Test.Discover_ProfilesPage_Test"/>
+        <method signature="Gallery_Test.NavigateToNFTGalleryPage()[pri:1, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" name="NavigateToNFTGalleryPage" class="com.nfts.Page_Test.Gallery_Test"/>
+        <method signature="Gallery_Test.ValidateAllBrokenImages()[pri:3, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" name="ValidateAllBrokenImages" class="com.nfts.Page_Test.Gallery_Test"/>
+        <method signature="Gallery_Test.ValidateGenesisKeyPageAsLoggedInUser()[pri:5, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" name="ValidateGenesisKeyPageAsLoggedInUser" class="com.nfts.Page_Test.Gallery_Test"/>
+        <method signature="Gallery_Test.ValidateGenesisKeyPageAsVisitor()[pri:4, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" name="ValidateGenesisKeyPageAsVisitor" class="com.nfts.Page_Test.Gallery_Test"/>
+        <method signature="Gallery_Test.ValidateTheBrokenLinks()[pri:2, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" name="ValidateTheBrokenLinks" class="com.nfts.Page_Test.Gallery_Test"/>
+        <method signature="HomePage_Test.FooterlinkRedirects()[pri:12, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="FooterlinkRedirects" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.NavigateToNFT()[pri:1, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="NavigateToNFT" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.ValidateNFTLogoImage()[pri:2, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="ValidateNFTLogoImage" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.ValidateNFTcomHeaderOptions()[pri:3, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="ValidateNFTcomHeaderOptions" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyCartheaderOption()[pri:8, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyCartheaderOption" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyClickonCreateAProfileButton()[pri:9, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyClickonCreateAProfileButton" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyConnectWalletScreen()[pri:11, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyConnectWalletScreen" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyDiscoverHeaderDropDownoptions()[pri:4, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyDiscoverHeaderDropDownoptions" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyHomePageSections()[pri:10, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyHomePageSections" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifyLearnHeaderDropDownoptions()[pri:5, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifyLearnHeaderDropDownoptions" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifySearchFieldResponse()[pri:6, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifySearchFieldResponse" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="HomePage_Test.VerifySignInResponse()[pri:7, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" name="VerifySignInResponse" class="com.nfts.Page_Test.HomePage_Test"/>
+        <method signature="Learn_BlogPage_Test.NavigateToLearn_BlogPage()[pri:1, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" name="NavigateToLearn_BlogPage" class="com.nfts.Page_Test.Learn_BlogPage_Test"/>
+        <method signature="Learn_BlogPage_Test.ValidateLearn_blogPage()[pri:2, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" name="ValidateLearn_blogPage" class="com.nfts.Page_Test.Learn_BlogPage_Test"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2023-03-24T12:51:00 IST" name="Default test" finished-at="2023-03-24T12:51:11 IST" duration-ms="11348">
-      <class name="com.nft.home_page_Test.HomePage_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:00 IST" name="setUp" finished-at="2023-03-24T12:51:03 IST" duration-ms="3108" status="PASS">
+    <test started-at="2023-04-04T10:37:19 IST" name="Regression Test" finished-at="2023-04-04T10:43:19 IST" duration-ms="360140">
+      <class name="com.nfts.Page_Test.Discover_NFTsPage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" started-at="2023-04-04T10:40:39 IST" name="setUp" finished-at="2023-04-04T10:40:39 IST" duration-ms="5" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="NavigateToNFT()[pri:1, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:03 IST" name="NavigateToNFT" finished-at="2023-03-24T12:51:03 IST" duration-ms="176" status="PASS">
+        <test-method signature="NavigateToDiscover_NFTsPage()[pri:1, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" started-at="2023-04-04T10:40:39 IST" name="NavigateToDiscover_NFTsPage" finished-at="2023-04-04T10:40:50 IST" duration-ms="10141" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToDiscover_NFTsPage -->
+        <test-method signature="ValidateDiscoverNFTsPage()[pri:2, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" started-at="2023-04-04T10:40:50 IST" name="ValidateDiscoverNFTsPage" finished-at="2023-04-04T10:41:08 IST" duration-ms="18100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateDiscoverNFTsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@316a598d]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nfts.Page_Test.Discover_NFTsPage_Test -->
+      <class name="com.nfts.Page_Test.Gallery_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:02 IST" name="setUp" finished-at="2023-04-04T10:42:02 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="NavigateToNFTGalleryPage()[pri:1, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:02 IST" name="NavigateToNFTGalleryPage" finished-at="2023-04-04T10:42:08 IST" duration-ms="6099" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToNFTGalleryPage -->
+        <test-method signature="ValidateTheBrokenLinks()[pri:2, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:08 IST" name="ValidateTheBrokenLinks" finished-at="2023-04-04T10:42:14 IST" duration-ms="5225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateTheBrokenLinks -->
+        <test-method signature="ValidateAllBrokenImages()[pri:3, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:14 IST" name="ValidateAllBrokenImages" finished-at="2023-04-04T10:42:16 IST" duration-ms="2142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAllBrokenImages -->
+        <test-method signature="ValidateGenesisKeyPageAsVisitor()[pri:4, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:16 IST" name="ValidateGenesisKeyPageAsVisitor" finished-at="2023-04-04T10:42:37 IST" duration-ms="21499" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateGenesisKeyPageAsVisitor -->
+        <test-method signature="ValidateGenesisKeyPageAsLoggedInUser()[pri:5, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:42:37 IST" name="ValidateGenesisKeyPageAsLoggedInUser" finished-at="2023-04-04T10:42:37 IST" duration-ms="2" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateGenesisKeyPageAsLoggedInUser -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Gallery_Test@35764bef]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nfts.Page_Test.Gallery_Test -->
+      <class name="com.nft.broken_links_Test.BrokenLinks_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" started-at="2023-04-04T10:37:19 IST" name="setUp" finished-at="2023-04-04T10:37:23 IST" duration-ms="4235" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="GetAllURLs()[pri:1, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" started-at="2023-04-04T10:37:23 IST" name="GetAllURLs" finished-at="2023-04-04T10:37:24 IST" duration-ms="1615" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- GetAllURLs -->
+        <test-method signature="ValidateTheBrokenLinks()[pri:2, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" started-at="2023-04-04T10:37:25 IST" name="ValidateTheBrokenLinks" finished-at="2023-04-04T10:37:54 IST" duration-ms="29628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateTheBrokenLinks -->
+        <test-method signature="ValidateAllBrokenImages()[pri:3, instance:com.nft.broken_links_Test.BrokenLinks_Test@6fd12c5]" started-at="2023-04-04T10:37:54 IST" name="ValidateAllBrokenImages" finished-at="2023-04-04T10:38:13 IST" duration-ms="19039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateAllBrokenImages -->
+      </class> <!-- com.nft.broken_links_Test.BrokenLinks_Test -->
+      <class name="com.nfts.Page_Test.Discover_ProfilesPage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" started-at="2023-04-04T10:41:42 IST" name="setUp" finished-at="2023-04-04T10:41:42 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="NavigateToDiscover_ProfilesPage()[pri:1, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" started-at="2023-04-04T10:41:42 IST" name="NavigateToDiscover_ProfilesPage" finished-at="2023-04-04T10:41:52 IST" duration-ms="10100" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToDiscover_ProfilesPage -->
+        <test-method signature="ValidateDiscoverProfilesPage()[pri:2, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" started-at="2023-04-04T10:41:52 IST" name="ValidateDiscoverProfilesPage" finished-at="2023-04-04T10:42:02 IST" duration-ms="10549" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateDiscoverProfilesPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Discover_ProfilesPage_Test@6ba30587]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nfts.Page_Test.Discover_ProfilesPage_Test -->
+      <class name="com.nfts.Page_Test.HomePage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:13 IST" name="setUp" finished-at="2023-04-04T10:38:13 IST" duration-ms="47" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="NavigateToNFT()[pri:1, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:13 IST" name="NavigateToNFT" finished-at="2023-04-04T10:38:16 IST" duration-ms="3015" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- NavigateToNFT -->
-        <test-method signature="ValidateNFTLogoImage()[pri:2, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:03 IST" name="ValidateNFTLogoImage" finished-at="2023-03-24T12:51:03 IST" duration-ms="384" status="PASS">
+        <test-method signature="ValidateNFTLogoImage()[pri:2, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:16 IST" name="ValidateNFTLogoImage" finished-at="2023-04-04T10:38:19 IST" duration-ms="3076" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateNFTLogoImage -->
-        <test-method signature="ValidateNFTcomHeaderOptions()[pri:3, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:03 IST" name="ValidateNFTcomHeaderOptions" finished-at="2023-03-24T12:51:04 IST" duration-ms="460" status="PASS">
+        <test-method signature="ValidateNFTcomHeaderOptions()[pri:3, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:19 IST" name="ValidateNFTcomHeaderOptions" finished-at="2023-04-04T10:38:23 IST" duration-ms="3571" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ValidateNFTcomHeaderOptions -->
-        <test-method signature="VerifyDiscoverHeaderDropDownoptions()[pri:4, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:04 IST" name="VerifyDiscoverHeaderDropDownoptions" finished-at="2023-03-24T12:51:04 IST" duration-ms="284" status="PASS">
+        <test-method signature="VerifyDiscoverHeaderDropDownoptions()[pri:4, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:23 IST" name="VerifyDiscoverHeaderDropDownoptions" finished-at="2023-04-04T10:38:26 IST" duration-ms="3267" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyDiscoverHeaderDropDownoptions -->
-        <test-method signature="VerifyLearnHeaderDropDownoptions()[pri:5, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:04 IST" name="VerifyLearnHeaderDropDownoptions" finished-at="2023-03-24T12:51:05 IST" duration-ms="1213" status="PASS">
+        <test-method signature="VerifyLearnHeaderDropDownoptions()[pri:5, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:26 IST" name="VerifyLearnHeaderDropDownoptions" finished-at="2023-04-04T10:38:30 IST" duration-ms="4209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyLearnHeaderDropDownoptions -->
-        <test-method signature="VerifySearchFieldResponse()[pri:6, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:05 IST" name="VerifySearchFieldResponse" finished-at="2023-03-24T12:51:11 IST" duration-ms="5512" status="FAIL">
+        <test-method signature="VerifySearchFieldResponse()[pri:6, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:30 IST" name="VerifySearchFieldResponse" finished-at="2023-04-04T10:38:45 IST" duration-ms="14097" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySearchFieldResponse -->
+        <test-method signature="VerifySignInResponse()[pri:7, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:45 IST" name="VerifySignInResponse" finished-at="2023-04-04T10:38:50 IST" duration-ms="5278" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySignInResponse -->
+        <test-method signature="VerifyCartheaderOption()[pri:8, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:50 IST" name="VerifyCartheaderOption" finished-at="2023-04-04T10:38:55 IST" duration-ms="5596" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyCartheaderOption -->
+        <test-method signature="VerifyClickonCreateAProfileButton()[pri:9, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:38:55 IST" name="VerifyClickonCreateAProfileButton" finished-at="2023-04-04T10:39:21 IST" duration-ms="25819" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyClickonCreateAProfileButton -->
+        <test-method signature="VerifyHomePageSections()[pri:10, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:39:21 IST" name="VerifyHomePageSections" finished-at="2023-04-04T10:39:31 IST" duration-ms="9686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyHomePageSections -->
+        <test-method signature="VerifyConnectWalletScreen()[pri:11, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:39:31 IST" name="VerifyConnectWalletScreen" finished-at="2023-04-04T10:39:39 IST" duration-ms="7861" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyConnectWalletScreen -->
+        <test-method signature="FooterlinkRedirects()[pri:12, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:39:39 IST" name="FooterlinkRedirects" finished-at="2023-04-04T10:40:39 IST" duration-ms="60636" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- FooterlinkRedirects -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.HomePage_Test@35cd68d4]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nfts.Page_Test.HomePage_Test -->
+      <class name="com.nfts.Page_Test.Discover_CollectionsPage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" started-at="2023-04-04T10:41:08 IST" name="setUp" finished-at="2023-04-04T10:41:08 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="NavigateToDiscover_CollectionsPage()[pri:1, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" started-at="2023-04-04T10:41:08 IST" name="NavigateToDiscover_CollectionsPage" finished-at="2023-04-04T10:41:18 IST" duration-ms="10114" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToDiscover_CollectionsPage -->
+        <test-method signature="ValidateDiscoverCollectionsPage()[pri:2, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" started-at="2023-04-04T10:41:18 IST" name="ValidateDiscoverCollectionsPage" finished-at="2023-04-04T10:41:42 IST" duration-ms="23856" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ValidateDiscoverCollectionsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@216914]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="156" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.nfts.Page_Test.Discover_CollectionsPage_Test -->
+      <class name="com.nfts.Page_Test.Learn_BlogPage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" started-at="2023-04-04T10:42:37 IST" name="setUp" finished-at="2023-04-04T10:42:40 IST" duration-ms="2628" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="NavigateToLearn_BlogPage()[pri:1, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" started-at="2023-04-04T10:42:40 IST" name="NavigateToLearn_BlogPage" finished-at="2023-04-04T10:42:50 IST" duration-ms="10151" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- NavigateToLearn_BlogPage -->
+        <test-method signature="ValidateLearn_blogPage()[pri:2, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" started-at="2023-04-04T10:42:50 IST" name="ValidateLearn_blogPage" finished-at="2023-04-04T10:43:19 IST" duration-ms="28388" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -50,8 +216,8 @@ at org.testng.Assert.fail(Assert.java:99)
 at org.testng.Assert.failNotEquals(Assert.java:1037)
 at org.testng.Assert.assertTrue(Assert.java:45)
 at org.testng.Assert.assertTrue(Assert.java:55)
-at com.nft.home_page.homepage.VerifySearchFieldResponse(homepage.java:109)
-at com.nft.home_page_Test.HomePage_Test.VerifySearchFieldResponse(HomePage_Test.java:51)
+at com.nft.learn.learn_Blogs.ValidateLearn_blogPage(learn_Blogs.java:97)
+at com.nfts.Page_Test.Learn_BlogPage_Test.ValidateLearn_blogPage(Learn_BlogPage_Test.java:35)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -85,12 +251,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifySearchFieldResponse -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nft.home_page_Test.HomePage_Test@550dbc7a]" started-at="2023-03-24T12:51:11 IST" name="tearDown" finished-at="2023-03-24T12:51:11 IST" duration-ms="173" status="PASS">
+        </test-method> <!-- ValidateLearn_blogPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Learn_BlogPage_Test@5633dafd]" started-at="2023-04-04T10:43:19 IST" name="tearDown" finished-at="2023-04-04T10:43:19 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.nft.home_page_Test.HomePage_Test -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.nfts.Page_Test.Learn_BlogPage_Test -->
+    </test> <!-- Regression Test -->
+  </suite> <!-- Regression Suite -->
 </testng-results>

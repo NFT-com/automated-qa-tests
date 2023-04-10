@@ -1,19 +1,23 @@
 package com.nft.broken_links;
 
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.Iterator;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.Listeners;
+import com.nft.qa.Listeners.AllureListener;
 import com.nft.qa.base.TestBase;
-import java.net.HttpURLConnection;
-import java.net.URL;
 
+@Listeners({AllureListener.class})
 public class BrokenLinks extends TestBase {
 
 
 
 	public void GetAllURLs() {
+		
 		String url = "";
 		List<WebElement> allURLs = driver.findElements(By.tagName("a"));
 		System.out.println("Total links on the Wb Page: " + allURLs.size());

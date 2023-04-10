@@ -4,11 +4,16 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.PageLoadStrategy;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -16,6 +21,9 @@ public class TestBase {
 
 	public static WebDriver driver;
 	public static Properties prop;
+	public WebDriverWait wait;
+	public static WebDriver getDriver() {
+        return driver;}
 
 	public TestBase() {
 		try {
@@ -68,7 +76,23 @@ public class TestBase {
 		 driver.manage().window().maximize();
 		 driver.manage().deleteAllCookies();
 		 //get the URL
+		//driver.get(prop.getProperty("stagingurl"));
 		driver.get(prop.getProperty("url"));
-
 	}
+	
+	public void click(By by) {
+        waitVisibility(by).click();
+    }
+    //Write Text
+    public void writeText(By by, String text) {
+        waitVisibility(by).sendKeys(text);
+    }
+    //Read Text
+    public String readText(By by) {
+        return waitVisibility(by).getText();
+    }
+    //Wait
+    public WebElement waitVisibility(By by) {
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(by));
+    }
 }

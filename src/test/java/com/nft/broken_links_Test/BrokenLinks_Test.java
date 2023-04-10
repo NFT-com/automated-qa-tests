@@ -1,11 +1,15 @@
 package com.nft.broken_links_Test;
 
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
+import com.nft.qa.Listeners.AllureListener;
 import com.nft.qa.base.TestBase;
 import com.nft.broken_links.BrokenLinks;
 
 
+@Listeners({AllureListener.class})
 public class BrokenLinks_Test  extends TestBase{
 	BrokenLinks brokenLinks;
 	
