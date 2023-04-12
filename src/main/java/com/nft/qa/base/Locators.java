@@ -640,4 +640,67 @@ public class Locators extends TestBase{
 	
 	@FindBy(xpath = "//h1[@data-testid='page.title']")
 	public WebElement Learn_DocsPage_PageTitle;
+	
+	@FindBy(xpath = "(//p[starts-with(@class,'whitespace-nowrap text-ellipsis ')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCard;
+	
+	@FindBy(xpath = "//video[starts-with(@poster,'https://nft-llc.mypinata.cloud/ipfs/')]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_NFTImage;
+	
+	@FindBy(xpath = "//*[@id=\"NFTDetailContainer\"]/div[1]/div[1]/a")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_ProfileName;
+	
+	@FindBy(xpath = "//div[@class='flex items-center']/div[starts-with(@class,'whitespace-nowrap text-ellipsis')]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_NFTName;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex flex-row items-center ')]//span)[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Creator;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex flex-row items-center ')]//span)[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Owner;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex flex-row items-center ')]//span)[3]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_CreatorName;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex flex-row items-center ')]//span)[4]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_OwnerName;
+	
+	@FindBy(xpath = "(//div[contains(text(),'Info')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Info;
+	
+	@FindBy(xpath = "(//div[contains(text(),'Traits')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Traits;
+	
+	@FindBy(xpath = "(//span[contains(text(),'Description')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Description;
+	
+	@FindBy(xpath = "(//p[@class='inline'])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Description_message;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Contract')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Contract;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Token ID')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_TokenID;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Token Standard')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_TokenStandard;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Blockchain')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Blockchain;
+	
+	@FindBy(xpath = "(//span[starts-with(@class,'flex flex-row w-1/2 justify-end text-base leading')])[1]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_ContractValue;
+	
+	@FindBy(xpath = "(//span[starts-with(@class,'flex flex-row w-1/2 justify-end text-base leading')])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_TokenIDValue;
+	
+	@FindBy(xpath = "(//span[starts-with(@class,'flex flex-row w-1/2 justify-end text-base leading')])[3]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_TokenStndValue;
+	
+	@FindBy(xpath = "(//span[starts-with(@class,'flex flex-row w-1/2 justify-end text-base leading')])[4]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_BlockchainValue;
+	
+	
+	
 }

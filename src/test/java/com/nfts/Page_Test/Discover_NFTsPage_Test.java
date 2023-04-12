@@ -19,8 +19,8 @@ public class Discover_NFTsPage_Test extends TestBase {
 	}
 
 	@BeforeClass(alwaysRun = true)
-	public void setUp() {
-		//initialization();
+	public void setUp() throws InterruptedException {
+		initialization();
 		Discover_NFTs = new discover_NFTs();
 	}
 

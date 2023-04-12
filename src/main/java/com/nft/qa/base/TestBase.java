@@ -1,5 +1,6 @@
 package com.nft.qa.base;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -12,6 +13,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -30,7 +32,7 @@ public class TestBase {
 			prop = new Properties();
 
 			FileInputStream ip = new FileInputStream(
-					"C:\\Users\\Admin\\eclipse-workspace\\nft\\src\\main\\java\\com\\nft\\qa\\config\\Config.properties");
+					"C:\\Users\\Admin\\git\\automated-qa-tests\\nft\\src\\main\\java\\com\\nft\\qa\\config\\Config.properties");
 			prop.load(ip);
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -39,7 +41,7 @@ public class TestBase {
 		}
 	}
 
-	public static void initialization() {
+	public static void initialization() throws InterruptedException {
 
 		String browserName = prop.getProperty("browser");
 
@@ -50,7 +52,6 @@ public class TestBase {
 			chromeOptions.addArguments("--remote-allow-origins=*", "ignore-certificate-errors");
 			// WebDriver driver = new ChromeDriver(chromeOptions);
 			WebDriverManager.chromedriver().setup();
-			// WebDriverManager.chromedriver().driverVersion("111.0.5563.65").setup();
 
 			driver = new ChromeDriver();
 
@@ -62,6 +63,23 @@ public class TestBase {
 			chromeOptions.addArguments("--disable-dev-shm-usage");
 			chromeOptions.addArguments("--disable-browser-side-navigation");
 			chromeOptions.addArguments("--disable-gpu");
+			//chromeOptions.addExtensions(new File("C:\\Users\\Admin\\git\\automated-qa-tests\\nft\\src\\main\\java\\com\\nft\\qa\\resourceFiles\\extension_metamask.crx"));
+		
+			
+			
+			chromeOptions.addExtensions(new File("C:\\Users\\Admin\\git\\automated-qa-tests\\nft\\src\\main\\java\\com\\nft\\qa\\resourceFiles\\metamaskextension.crx"));
+			DesiredCapabilities capabilities = new DesiredCapabilities();
+			capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+			chromeOptions.merge(capabilities);
+			//ChromeDriver driver = new ChromeDriver(capabilities);
+			System.out.println("Opening extension");
+			driver.get("https://chrome.google.com/webstore/detail/link-redirect-trace/nkbihfbeogaeaoehlefnkodbefgpgknn");
+			driver.navigate().refresh();
+	        System.out.println("Refresh successfully");
+			Thread.sleep(5000);
+			
+			
+			
 			// driver = (WebDriver) new ChromeDriver(chromeOptions);
 			//	driver.manage().window().maximize();
 			//driver.manage().deleteAllCookies();
@@ -75,7 +93,7 @@ public class TestBase {
 		}
 		 driver.manage().window().maximize();
 		 driver.manage().deleteAllCookies();
-		 //get the URL
+
 		//driver.get(prop.getProperty("stagingurl"));
 		driver.get(prop.getProperty("url"));
 	}

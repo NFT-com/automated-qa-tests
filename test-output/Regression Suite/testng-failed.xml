@@ -7,9 +7,67 @@
         <methods>
           <include name="tearDown"/>
           <include name="setUp"/>
+          <include name="NavigateToLearn_BlogPage"/>
           <include name="ValidateLearn_blogPage"/>
         </methods>
       </class> <!-- com.nfts.Page_Test.Learn_BlogPage_Test -->
+      <class name="com.nfts.Page_Test.Discover_CollectionsPage_Test">
+        <methods>
+          <include name="tearDown"/>
+          <include name="ValidateDiscoverCollectionsPage"/>
+          <include name="setUp"/>
+          <include name="NavigateToDiscover_CollectionsPage"/>
+        </methods>
+      </class> <!-- com.nfts.Page_Test.Discover_CollectionsPage_Test -->
+      <class name="com.nfts.Page_Test.Discover_NFTsPage_Test">
+        <methods>
+          <include name="NavigateToDiscover_NFTsPage"/>
+          <include name="ValidateDiscoverNFTsPage"/>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+        </methods>
+      </class> <!-- com.nfts.Page_Test.Discover_NFTsPage_Test -->
+      <class name="com.nft.broken_links_Test.BrokenLinks_Test">
+        <methods>
+          <include name="GetAllURLs"/>
+          <include name="ValidateTheBrokenLinks"/>
+          <include name="ValidateAllBrokenImages"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.nft.broken_links_Test.BrokenLinks_Test -->
+      <class name="com.nfts.Page_Test.Discover_ProfilesPage_Test">
+        <methods>
+          <include name="NavigateToDiscover_ProfilesPage"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+          <include name="ValidateDiscoverProfilesPage"/>
+        </methods>
+      </class> <!-- com.nfts.Page_Test.Discover_ProfilesPage_Test -->
+      <class name="com.nfts.Page_Test.HomePage_Test">
+        <methods>
+          <include name="FooterlinkRedirects"/>
+          <include name="VerifyDiscoverHeaderDropDownoptions"/>
+          <include name="VerifyLearnHeaderDropDownoptions"/>
+          <include name="VerifyConnectWalletScreen"/>
+          <include name="VerifyCartheaderOption"/>
+          <include name="tearDown"/>
+          <include name="ValidateNFTcomHeaderOptions"/>
+          <include name="VerifyHomePageSections"/>
+          <include name="ValidateNFTLogoImage"/>
+          <include name="VerifySearchFieldResponse"/>
+          <include name="VerifySignInResponse"/>
+          <include name="setUp"/>
+          <include name="VerifyClickonCreateAProfileButton"/>
+        </methods>
+      </class> <!-- com.nfts.Page_Test.HomePage_Test -->
+      <class name="com.nfts.Page_Test.Gallery_Test">
+        <methods>
+          <include name="setUp"/>
+          <include name="ValidateGenesisKeyPageAsVisitor"/>
+          <include name="tearDown"/>
+          <include name="NavigateToNFTGalleryPage"/>
+        </methods>
+      </class> <!-- com.nfts.Page_Test.Gallery_Test -->
     </classes>
   </test> <!-- Regression Test(failed) -->
 </suite> <!-- Failed suite [Regression Suite] -->

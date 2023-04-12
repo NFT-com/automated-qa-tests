@@ -18,7 +18,7 @@ public class BrokenLinks_Test  extends TestBase{
 	}
 
 	@BeforeClass(alwaysRun = true)
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 		initialization();
 		brokenLinks = new BrokenLinks();
 	}

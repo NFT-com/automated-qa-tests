@@ -19,7 +19,7 @@ public class Learn_DocsPage_Test extends TestBase {
 	}
 
 	@BeforeClass(alwaysRun = true)
-	public void setUp() {
+	public void setUp() throws InterruptedException {
 		initialization();
 		Learn_Docs = new learn_Docs();
 	}

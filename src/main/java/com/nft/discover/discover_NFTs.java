@@ -124,6 +124,14 @@ public class discover_NFTs extends TestBase {
 		System.out.println("<<<<=====Load More Button is displayed on NFTs Page====>>>>");
 	}
 
+	public void VerifyNFTdetailspage() throws InterruptedException {
+		executor.executeScript("window.scrollBy(0,-150)", "");
+		Thread.sleep(1500);
+		locators.DiscoverNFTsPage_NFTCard.click();
+		Thread.sleep(3000);
+		
+		
+	}
 	
 
 }

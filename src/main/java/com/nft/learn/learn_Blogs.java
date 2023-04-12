@@ -36,7 +36,7 @@ public class learn_Blogs extends TestBase {
 		System.out.println(currenturl);
 		Assert.assertEquals(currenturl, "https://www.nft.com/articles");
 		System.out.println("<<<<=====NFT.COM Blogs Page loaded successfully.====>>>>");
-		System.out.println("<<<<=====NFT.COM Blogs Page loaded successfully.====>>>>");
+		
 	}
 
 	
