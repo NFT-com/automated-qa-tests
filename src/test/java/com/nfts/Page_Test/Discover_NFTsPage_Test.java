@@ -36,6 +36,11 @@ public class Discover_NFTsPage_Test extends TestBase {
 		Discover_NFTs.ValidateDiscoverNFTsPage();
 	}
 
+	@Test(groups = {"regression"}, priority = 3)
+	public void VerifyNFTdetailspage() throws Exception {
+		Discover_NFTs.VerifyNFTdetailspage();
+	}
+	
 	@AfterSuite(alwaysRun = true)
 	public void tearDown() {
 		driver.quit();

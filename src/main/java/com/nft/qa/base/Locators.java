@@ -701,6 +701,63 @@ public class Locators extends TestBase{
 	@FindBy(xpath = "(//span[starts-with(@class,'flex flex-row w-1/2 justify-end text-base leading')])[4]")
 	public WebElement DiscoverNFTsPage_NFTCardDetailPage_BlockchainValue;
 	
+	@FindBy(xpath = "(//div[@class='w-full flex justify-center']/div/div/div/span)[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Pricedetail;
+	
+	@FindBy(xpath = "(//div[@class='flex items-end']/div/span)[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_PriceValue;
+	
+	@FindBy(xpath = "(//div[@class='flex items-end']/span)[4]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_PriceValue_EthOrWeth;
+	
+	@FindBy(xpath = "((//div[starts-with(@class,'flex md:flex-col md:items-start items-end leading-')])/span)[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_PriceValueInUSD;
+	
+	@FindBy(xpath = "(//p[contains(text(),'Ends in')])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_EndsIn;
+	
+	@FindBy(xpath = "//*[@id=\"__next\"]/div/div/div/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div[2]/div[1]/p[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_EndsInDays;
+	
+	@FindBy(xpath = "(//span[@class='text-black'])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_ListedMarketPlaceValue;
+	
+	@FindBy(xpath = "(//div[@class='flex justify-center items-center'])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_SelectListingORAddtoCart;
+	
+	@FindBy(xpath = "(//button[contains(text(),'Activity')])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Activities;
+	
+	@FindBy(xpath = "(//button[contains(text(),'Sales')])[2]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_Sales;
+	
+	@FindBy(xpath = "(//span[contains(text(),'More from collection')])")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_MoreFromCollection;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'group-hover/ntfCard:opacity-')])[36]")
+	public WebElement DiscoverNFTsPage_NFTCardDetailPage_MoreFromCollection_card;
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -73,17 +73,11 @@ public class TestBase {
 			chromeOptions.merge(capabilities);
 			//ChromeDriver driver = new ChromeDriver(capabilities);
 			System.out.println("Opening extension");
-			driver.get("https://chrome.google.com/webstore/detail/link-redirect-trace/nkbihfbeogaeaoehlefnkodbefgpgknn");
+			/*driver.get("https://chrome.google.com/webstore/detail/link-redirect-trace/nkbihfbeogaeaoehlefnkodbefgpgknn");
 			driver.navigate().refresh();
 	        System.out.println("Refresh successfully");
-			Thread.sleep(5000);
+			Thread.sleep(5000);*/
 			
-			
-			
-			// driver = (WebDriver) new ChromeDriver(chromeOptions);
-			//	driver.manage().window().maximize();
-			//driver.manage().deleteAllCookies();
-
 		}
 
 		else if (browserName.equals("Firefox")) {
