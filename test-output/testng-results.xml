@@ -2,37 +2,37 @@
 <testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-04-13T19:10:24 IST" name="Default suite" finished-at="2023-04-13T19:11:13 IST" duration-ms="48783">
+  <suite started-at="2023-04-14T19:42:25 IST" name="Default suite" finished-at="2023-04-14T19:43:32 IST" duration-ms="66957">
     <groups>
       <group name="regression">
-        <method signature="Discover_NFTsPage_Test.NavigateToDiscover_NFTsPage()[pri:1, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" name="NavigateToDiscover_NFTsPage" class="com.nfts.Page_Test.Discover_NFTsPage_Test"/>
-        <method signature="Discover_NFTsPage_Test.ValidateDiscoverNFTsPage()[pri:2, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" name="ValidateDiscoverNFTsPage" class="com.nfts.Page_Test.Discover_NFTsPage_Test"/>
-        <method signature="Discover_NFTsPage_Test.VerifyNFTdetailspage()[pri:3, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" name="VerifyNFTdetailspage" class="com.nfts.Page_Test.Discover_NFTsPage_Test"/>
+        <method signature="Discover_CollectionsPage_Test.NavigateToDiscover_CollectionsPage()[pri:1, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" name="NavigateToDiscover_CollectionsPage" class="com.nfts.Page_Test.Discover_CollectionsPage_Test"/>
+        <method signature="Discover_CollectionsPage_Test.ValidateDiscoverCollectionsPage()[pri:2, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" name="ValidateDiscoverCollectionsPage" class="com.nfts.Page_Test.Discover_CollectionsPage_Test"/>
+        <method signature="Discover_CollectionsPage_Test.VerifyCollectionDetailsPage()[pri:3, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" name="VerifyCollectionDetailsPage" class="com.nfts.Page_Test.Discover_CollectionsPage_Test"/>
       </group> <!-- regression -->
     </groups>
-    <test started-at="2023-04-13T19:10:24 IST" name="Default test" finished-at="2023-04-13T19:11:13 IST" duration-ms="48783">
-      <class name="com.nfts.Page_Test.Discover_NFTsPage_Test">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" started-at="2023-04-13T19:10:24 IST" name="setUp" finished-at="2023-04-13T19:10:31 IST" duration-ms="6559" status="PASS">
+    <test started-at="2023-04-14T19:42:25 IST" name="Default test" finished-at="2023-04-14T19:43:32 IST" duration-ms="66957">
+      <class name="com.nfts.Page_Test.Discover_CollectionsPage_Test">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" started-at="2023-04-14T19:42:25 IST" name="setUp" finished-at="2023-04-14T19:42:32 IST" duration-ms="6962" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="NavigateToDiscover_NFTsPage()[pri:1, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" started-at="2023-04-13T19:10:31 IST" name="NavigateToDiscover_NFTsPage" finished-at="2023-04-13T19:10:41 IST" duration-ms="10251" status="PASS">
+        <test-method signature="NavigateToDiscover_CollectionsPage()[pri:1, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" started-at="2023-04-14T19:42:32 IST" name="NavigateToDiscover_CollectionsPage" finished-at="2023-04-14T19:42:42 IST" duration-ms="10239" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NavigateToDiscover_NFTsPage -->
-        <test-method signature="ValidateDiscoverNFTsPage()[pri:2, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" started-at="2023-04-13T19:10:41 IST" name="ValidateDiscoverNFTsPage" finished-at="2023-04-13T19:11:00 IST" duration-ms="19006" status="PASS">
+        </test-method> <!-- NavigateToDiscover_CollectionsPage -->
+        <test-method signature="ValidateDiscoverCollectionsPage()[pri:2, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" started-at="2023-04-14T19:42:42 IST" name="ValidateDiscoverCollectionsPage" finished-at="2023-04-14T19:43:07 IST" duration-ms="25095" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ValidateDiscoverNFTsPage -->
-        <test-method signature="VerifyNFTdetailspage()[pri:3, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" started-at="2023-04-13T19:11:00 IST" name="VerifyNFTdetailspage" finished-at="2023-04-13T19:11:13 IST" duration-ms="12819" status="PASS">
+        </test-method> <!-- ValidateDiscoverCollectionsPage -->
+        <test-method signature="VerifyCollectionDetailsPage()[pri:3, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" started-at="2023-04-14T19:43:08 IST" name="VerifyCollectionDetailsPage" finished-at="2023-04-14T19:43:32 IST" duration-ms="24516" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- VerifyNFTdetailspage -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Discover_NFTsPage_Test@7479b626]" started-at="2023-04-13T19:11:13 IST" name="tearDown" finished-at="2023-04-13T19:11:13 IST" duration-ms="187" status="PASS">
+        </test-method> <!-- VerifyCollectionDetailsPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.nfts.Page_Test.Discover_CollectionsPage_Test@e8ea697]" started-at="2023-04-14T19:43:32 IST" name="tearDown" finished-at="2023-04-14T19:43:32 IST" duration-ms="178" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.nfts.Page_Test.Discover_NFTsPage_Test -->
+      </class> <!-- com.nfts.Page_Test.Discover_CollectionsPage_Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

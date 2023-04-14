@@ -19,7 +19,8 @@ public class discover_Collections extends TestBase {
 	JavascriptExecutor executor = (JavascriptExecutor) driver;
 	Actions actions = new Actions(driver);
 	BrokenLinks brokenLinks = new BrokenLinks();
-	 
+	int expectedNFTcardlist = 8;
+	int expectedNFTcardlist_afterLoadMore = 16;
 	
 	public void NavigateToDiscover_CollectionsPage() throws InterruptedException {
 		Thread.sleep(2000);
@@ -163,6 +164,163 @@ public class discover_Collections extends TestBase {
 		System.out.println("<<<<=====Load More Button is displayed on Collections Page====>>>>");
 		
 		
+	}
+	
+	public void VerifyCollectionDetailsPage() throws InterruptedException {
+		executor.executeScript("window.scrollBy(0,-450)", "");
+		Thread.sleep(1500);
+		executor.executeScript("arguments[0].click();", locators.DiscoverCollectionsPage_CollectionCard);
+		Thread.sleep(8000);
+		
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_BannerImage.isDisplayed());
+		
+		String DiscoverCollectionsDetailPage_CollectionName = locators.DiscoverCollectionsDetailPage_CollectionName.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_CollectionName.isDisplayed());
+		System.out.println("Collection name is====>> " + DiscoverCollectionsDetailPage_CollectionName);
+		
+		String DiscoverCollectionsDetailPage_CollectionCreator = locators.DiscoverCollectionsDetailPage_CollectionCreator.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_CollectionCreator.isDisplayed());
+		System.out.println("Collection creator is====>> " + DiscoverCollectionsDetailPage_CollectionCreator);
+		
+		String DiscoverCollectionsDetailPage_CollectionCreatorWalletAddress = locators.DiscoverCollectionsDetailPage_CollectionCreatorWalletAddress.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_CollectionCreatorWalletAddress.isDisplayed());
+		System.out.println("Collection creator wallet address is====>> " + DiscoverCollectionsDetailPage_CollectionCreatorWalletAddress);
+		
+		String DiscoverCollectionsDetailPage_ContractAddress = locators.DiscoverCollectionsDetailPage_ContractAddress.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_ContractAddress.isDisplayed());
+		System.out.println("Collection contract address is====>> " + DiscoverCollectionsDetailPage_ContractAddress);
+		
+		String DiscoverCollectionsDetailPage_ContractWalletAddress = locators.DiscoverCollectionsDetailPage_ContractWalletAddress.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_ContractWalletAddress.isDisplayed());
+		System.out.println("Collection contract wallet address is====>> " + DiscoverCollectionsDetailPage_ContractWalletAddress);
+		
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_Description.isDisplayed());
+	
+		String DiscoverCollectionsDetailPage_DescriptionValue = locators.DiscoverCollectionsDetailPage_DescriptionValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_DescriptionValue.isDisplayed());
+		System.out.println("Collection Description is====>> " + DiscoverCollectionsDetailPage_DescriptionValue);
+		
+		String DiscoverCollectionsDetailPage_Floor = locators.DiscoverCollectionsDetailPage_Floor.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_Floor.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_Floor);
+		
+		String DiscoverCollectionsDetailPage_FloorValue = locators.DiscoverCollectionsDetailPage_FloorValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_FloorValue.isDisplayed());
+		System.out.println("Collection floor value is====>> " + DiscoverCollectionsDetailPage_FloorValue);
+		
+		String DiscoverCollectionsDetailPage_TotalVol = locators.DiscoverCollectionsDetailPage_TotalVol.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_TotalVol.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_TotalVol);
+		
+		String DiscoverCollectionsDetailPage_TotalVolValue = locators.DiscoverCollectionsDetailPage_TotalVolValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_TotalVolValue.isDisplayed());
+		System.out.println("Collection total vol value is====>> " + DiscoverCollectionsDetailPage_TotalVolValue);
+		
+		String DiscoverCollectionsDetailPage_Supply = locators.DiscoverCollectionsDetailPage_Supply.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_Supply.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_Supply);
+		
+		String DiscoverCollectionsDetailPage_SupplyValue = locators.DiscoverCollectionsDetailPage_SupplyValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SupplyValue.isDisplayed());
+		System.out.println("Collection Supply value is====>> " + DiscoverCollectionsDetailPage_SupplyValue);
+		
+		String DiscoverCollectionsDetailPage_Owners = locators.DiscoverCollectionsDetailPage_Owners.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_Owners.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_Owners);
+		
+		String DiscoverCollectionsDetailPage_OwnersValue = locators.DiscoverCollectionsDetailPage_OwnersValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_OwnersValue.isDisplayed());
+		System.out.println("Collection owner value is====>> " + DiscoverCollectionsDetailPage_OwnersValue);
+		
+
+		String DiscoverCollectionsDetailPage_SORatio = locators.DiscoverCollectionsDetailPage_SORatio.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SORatio.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_SORatio);
+		
+		String DiscoverCollectionsDetailPage_SORatioValue = locators.DiscoverCollectionsDetailPage_SORatioValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SORatioValue.isDisplayed());
+		System.out.println("Collection S/O Ratio value is====>> " + DiscoverCollectionsDetailPage_SORatioValue);
+		
+		String DiscoverCollectionsDetailPage_MKTCap = locators.DiscoverCollectionsDetailPage_MKTCap.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_MKTCap.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_MKTCap);
+		
+		String DiscoverCollectionsDetailPage_MKTCapValue = locators.DiscoverCollectionsDetailPage_MKTCapValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_MKTCapValue.isDisplayed());
+		System.out.println("Collection MKT cap value is====>> " + DiscoverCollectionsDetailPage_MKTCapValue);
+		
+		String DiscoverCollectionsDetailPage_AvgPrice = locators.DiscoverCollectionsDetailPage_AvgPrice.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_AvgPrice.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_AvgPrice);
+		
+		String DiscoverCollectionsDetailPage_AvgPriceValue = locators.DiscoverCollectionsDetailPage_AvgPriceValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_AvgPriceValue.isDisplayed());
+		System.out.println("Collection AvgPrice value is====>> " + DiscoverCollectionsDetailPage_AvgPriceValue);
+		
+		String DiscoverCollectionsDetailPage_Type = locators.DiscoverCollectionsDetailPage_Type.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_Type.isDisplayed());
+		System.out.println("Collection data table name is====>> " + DiscoverCollectionsDetailPage_Type);
+		
+		String DiscoverCollectionsDetailPage_TypeValue = locators.DiscoverCollectionsDetailPage_TypeValue.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_TypeValue.isDisplayed());
+		System.out.println("Collection type value is====>> " + DiscoverCollectionsDetailPage_TypeValue);
+		
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_FilterOption.isDisplayed());
+		
+		String DiscoverCollectionsDetailPage_NFTsListView = locators.DiscoverCollectionsDetailPage_NFTsListView.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_NFTsListView.isDisplayed());
+		System.out.println("Collection list view is for ====>> " + DiscoverCollectionsDetailPage_NFTsListView);
+		
+		String DiscoverCollectionsDetailPage_ActivitiesListView = locators.DiscoverCollectionsDetailPage_ActivitiesListView.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_ActivitiesListView.isDisplayed());
+		System.out.println("Collection list view is for ====>> " + DiscoverCollectionsDetailPage_ActivitiesListView);
+		
+		String DiscoverCollectionsDetailPage_TotalNFTsCount = locators.DiscoverCollectionsDetailPage_TotalNFTsCount.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_TotalNFTsCount.isDisplayed());
+		System.out.println("Total listed NFT under this collection is ====>> " + DiscoverCollectionsDetailPage_TotalNFTsCount);
+		
+		List<WebElement> DiscoverCollectionsDetailPage_TotalNFTsCardCount = locators.DiscoverCollectionsDetailPage_TotalNFTsCardCount;
+		System.out.println("No of cards are : " + DiscoverCollectionsDetailPage_TotalNFTsCardCount.size());
+		for (int j = 0; j < DiscoverCollectionsDetailPage_TotalNFTsCardCount.size(); j++) {
+			int ProfilesPage_Leaderboard_DisplayedResults = DiscoverCollectionsDetailPage_TotalNFTsCardCount.size();
+			//System.out.println("Profile card count is ==> " +ProfilesPage_Leaderboard_DisplayedResults);
+			Assert.assertEquals(ProfilesPage_Leaderboard_DisplayedResults, expectedNFTcardlist);
+		}
+		
+		locators.DiscoverCollectionsDetailPage_LoadMorebutton.click();
+		Thread.sleep(3000);
+		
+		List<WebElement> DiscoverCollectionsDetailPage_TotalNFTsCardCounts = locators.DiscoverCollectionsDetailPage_TotalNFTsCardCount;
+		System.out.println("No of cards are : " + DiscoverCollectionsDetailPage_TotalNFTsCardCounts.size());
+		for (int j = 0; j < DiscoverCollectionsDetailPage_TotalNFTsCardCounts.size(); j++) {
+			int ProfilesPage_Leaderboard_DisplayedResult = DiscoverCollectionsDetailPage_TotalNFTsCardCounts.size();
+			//System.out.println("Profile card count is ==> " +ProfilesPage_Leaderboard_DisplayedResults);
+			Assert.assertEquals(ProfilesPage_Leaderboard_DisplayedResult, expectedNFTcardlist_afterLoadMore);
+		}
+		
+		//locators.DiscoverCollectionsDetailPage_FilterOption.click();
+		executor.executeScript("arguments[0].click();", locators.DiscoverCollectionsDetailPage_FilterOption);
+		
+		Thread.sleep(2000);
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SearchForNFTs.isDisplayed());
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SearchForNFTs_SearchField.isDisplayed());
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SearchForNFTs_ClearFilter.isDisplayed());
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SearchForNFTs_CloseFilter.isDisplayed());
+		
+		locators.DiscoverCollectionsDetailPage_SearchForNFTs_SearchField.sendKeys("9999");
+		Thread.sleep(2000);
+		String DiscoverCollectionsDetailPage_SearchForNFTs_CardName = locators.DiscoverCollectionsDetailPage_SearchForNFTs_CardName.getText();
+		Assert.assertTrue(locators.DiscoverCollectionsDetailPage_SearchForNFTs_CardName.isDisplayed());
+		System.out.println("Collection list view is for ====>> " + DiscoverCollectionsDetailPage_SearchForNFTs_CardName);
+		
+		Assert.assertTrue(DiscoverCollectionsDetailPage_SearchForNFTs_CardName.contains("9"));
+		
+		
+		locators.DiscoverCollectionsDetailPage_SearchForNFTs_ClearFilter.click();
+		Thread.sleep(2000);
+		locators.DiscoverCollectionsDetailPage_SearchForNFTs_CloseFilter.click();
+		Thread.sleep(2000);
+		System.out.println("*****Filter closed successfully*****");
 	}
 
 	

@@ -3,13 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.nfts.Page_Test.Discover_NFTsPage_Test">
+      <class name="com.nfts.Page_Test.Discover_CollectionsPage_Test">
         <methods>
-          <include name="setUp"/>
-          <include name="VerifyNFTdetailspage"/>
           <include name="tearDown"/>
+          <include name="VerifyCollectionDetailsPage"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- com.nfts.Page_Test.Discover_NFTsPage_Test -->
+      </class> <!-- com.nfts.Page_Test.Discover_CollectionsPage_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

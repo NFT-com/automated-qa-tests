@@ -19,8 +19,8 @@ public class Discover_CollectionsPage_Test extends TestBase {
 	}
 
 	@BeforeClass(alwaysRun = true)
-	public void setUp() {
-		//initialization();
+	public void setUp() throws InterruptedException {
+		initialization();
 		Discover_Collections = new discover_Collections();
 	}
 
@@ -33,6 +33,12 @@ public class Discover_CollectionsPage_Test extends TestBase {
 	@Test(groups = {"regression"}, priority = 2)
 	public void ValidateDiscoverCollectionsPage() throws Exception {
 		Discover_Collections.ValidateDiscoverCollectionsPage();
+	}
+	
+
+	@Test(groups = {"regression"}, priority = 3)
+	public void VerifyCollectionDetailsPage() throws Exception {
+		Discover_Collections.VerifyCollectionDetailsPage();
 	}
 	
 	@AfterSuite(alwaysRun = true)

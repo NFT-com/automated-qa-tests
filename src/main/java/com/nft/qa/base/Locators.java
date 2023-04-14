@@ -737,22 +737,113 @@ public class Locators extends TestBase{
 	@FindBy(xpath = "(//div[starts-with(@class,'group-hover/ntfCard:opacity-')])[36]")
 	public WebElement DiscoverNFTsPage_NFTCardDetailPage_MoreFromCollection_card;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between items-start')])[4]")
+	public WebElement DiscoverCollectionsPage_CollectionCard;
 	
+	@FindBy(xpath = "//img[@alt='banner']")
+	public WebElement DiscoverCollectionsDetailPage_BannerImage;
 	
+	@FindBy(xpath = "//div[@class='flex']//h2")
+	public WebElement DiscoverCollectionsDetailPage_CollectionName;
 	
+	@FindBy(xpath = "(//div[@class='flex']//div/p)[2]")
+	public WebElement DiscoverCollectionsDetailPage_CollectionCreator;
 	
+	@FindBy(xpath = "(//div[@class='flex']//div/div)[2]")
+	public WebElement DiscoverCollectionsDetailPage_CollectionCreatorWalletAddress;
 	
+	@FindBy(xpath = "(//div[@class='flex flex-col']//p)[1]")
+	public WebElement DiscoverCollectionsDetailPage_ContractAddress;
 	
+	@FindBy(xpath = "(//div[@class='flex flex-col']//div)[1]")
+	public WebElement DiscoverCollectionsDetailPage_ContractWalletAddress;
 	
+	@FindBy(xpath = "//h3[contains(text(),'Description')]")
+	public WebElement DiscoverCollectionsDetailPage_Description;
 	
+	@FindBy(xpath = "//*[@id=\"__next\"]/div/div/div/div[4]/div[3]/div[1]/div")
+	public WebElement DiscoverCollectionsDetailPage_DescriptionValue;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[1]")
+	public WebElement DiscoverCollectionsDetailPage_Floor;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'text-right relative')]//p)[1]")
+	public WebElement DiscoverCollectionsDetailPage_FloorValue;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[2]")
+	public WebElement DiscoverCollectionsDetailPage_TotalVol;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[1]")
+	public WebElement DiscoverCollectionsDetailPage_TotalVolValue;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[3]")
+	public WebElement DiscoverCollectionsDetailPage_Supply;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[2]")
+	public WebElement DiscoverCollectionsDetailPage_SupplyValue;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[4]")
+	public WebElement DiscoverCollectionsDetailPage_Owners;
 	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[3]")
+	public WebElement DiscoverCollectionsDetailPage_OwnersValue;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[5]")
+	public WebElement DiscoverCollectionsDetailPage_SORatio;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[4]")
+	public WebElement DiscoverCollectionsDetailPage_SORatioValue;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[7]")
+	public WebElement DiscoverCollectionsDetailPage_MKTCap;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/div)[2]")
+	public WebElement DiscoverCollectionsDetailPage_MKTCapValue;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[6]")
+	public WebElement DiscoverCollectionsDetailPage_AvgPrice;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/span)[8]")
+	public WebElement DiscoverCollectionsDetailPage_AvgPriceValue;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between ')]/p)[8]")
+	public WebElement DiscoverCollectionsDetailPage_Type;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'flex justify-between mt-')]/p)[7]")
+	public WebElement DiscoverCollectionsDetailPage_TypeValue;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'cursor-pointer ')])")
+	public WebElement DiscoverCollectionsDetailPage_FilterOption;
+	
+	@FindBy(xpath = "(//button[@role='tab'])[1]")
+	public WebElement DiscoverCollectionsDetailPage_NFTsListView;
+	
+	@FindBy(xpath = "(//button[@role='tab'])[2]")
+	public WebElement DiscoverCollectionsDetailPage_ActivitiesListView;
+	
+	@FindBy(xpath = "(//div[@class='flex-auto']/p)")
+	public WebElement DiscoverCollectionsDetailPage_TotalNFTsCount;
+	
+	@FindBy(xpath = "(//div[starts-with(@class,'NftCollectionItem')])")
+	public List <WebElement> DiscoverCollectionsDetailPage_TotalNFTsCardCount;
+	
+	@FindBy(xpath = "//div[contains(text(),'Load More')]")
+	public WebElement DiscoverCollectionsDetailPage_LoadMorebutton;
+	
+	@FindBy(xpath = "//div[contains(text(),'Search for NFTs')]")
+	public WebElement DiscoverCollectionsDetailPage_SearchForNFTs;
+	
+	@FindBy(xpath = "//input[@placeholder='Search by name or ID']")
+	public WebElement DiscoverCollectionsDetailPage_SearchForNFTs_SearchField;
+	
+	@FindBy(xpath = "//div[contains(text(),'Clear filter')]")
+	public WebElement DiscoverCollectionsDetailPage_SearchForNFTs_ClearFilter;
+	
+	@FindBy(xpath = "//p[contains(text(),'Close Filters')]")
+	public WebElement DiscoverCollectionsDetailPage_SearchForNFTs_CloseFilter;
+	
+	@FindBy(xpath = "(//p[starts-with(@class,'whitespace-nowrap text-ellipsis ')])[1]")
+	public WebElement DiscoverCollectionsDetailPage_SearchForNFTs_CardName;
 	
 	
 	
